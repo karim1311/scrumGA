@@ -33,7 +33,7 @@ class TipoController extends Controller
         $tipo->porcentaje = $request->porcentaje;
         $tipo->rango = $request->rango;
         $request->validate([
-            'descripcion' => 'required|string|alpha:ascii|max:255',
+            'descripcion' => 'required|unique|string|alpha:ascii|max:255',
             'porcentaje' => 'required|numeric|min:1|max:100',
             'rango' => 'required|numeric|min:1|max:100',
         ]);

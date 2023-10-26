@@ -33,7 +33,7 @@ class EvaluacionController extends Controller
         $evaluacion->tipo_id = $request->tipo_id;
         $evaluacion->fecha = $request->fecha;
         $request->validate([
-            'descripcion' => 'bail|required|string|max:255',
+            'descripcion' => 'bail|required|unique|string|max:255',
             'tipo_id' => 'required|numeric|max:255',
             'fecha' => 'required|date',
         ]);
