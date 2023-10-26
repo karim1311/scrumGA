@@ -32,10 +32,19 @@ class CalificacionController extends Controller
         $calificacion->alumno_id = $request->alumno_id;
         $calificacion->evaluacion_id = $request->evaluacion_id;
         $calificacion->nota = $request->nota;
-        $calificacion->mensaje = $request->amensaje;
+        $calificacion->mensaje = $request->mensaje;
+        $request->validate([
+            'alumno_id' => 'bail|required|numeric|max:255',
+            'evaluacion_id' => 'required|numeric|max:255',
+            'nota' => 'required|numeric|decimal:2|min:1|max:100',
+            'mensaje' => 'alpha_num:ascii|max:255',
+        ]);
         $calificacion->save();
         return "Calificacion guardada correctamente";
     }
+
+    // HECHO : hacer que en el campo nota, solo acepte valores del 1 al 100, y hasta 2 numeros decimales
+    // hacer que todos los campos sean requeridos, y que en los campos sólo alfabeticos no acepte combinacion con numeros
 
     /**
      * Display the specified resource.

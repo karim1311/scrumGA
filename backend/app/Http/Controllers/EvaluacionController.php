@@ -32,9 +32,16 @@ class EvaluacionController extends Controller
         $evaluacion->descripcion = $request->descripcion;
         $evaluacion->tipo_id = $request->tipo_id;
         $evaluacion->fecha = $request->fecha;
+        $request->validate([
+            'descripcion' => 'bail|required|string|max:255',
+            'tipo_id' => 'required|numeric|max:255',
+            'fecha' => 'required|date',
+        ]);
         $evaluacion->save();
         return "Evaluacion guardada correctamente";
     }
+
+    // hacer que todos los campos sean requeridos, y que en los campos sólo alfabeticos no acepte combinacion con numeros
 
     /**
      * Display the specified resource.
