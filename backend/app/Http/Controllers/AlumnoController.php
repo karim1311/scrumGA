@@ -45,7 +45,7 @@ class AlumnoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Alumno $alumno)
+    public function show(string $id)
     {
         $alumno = Alumno::find($id);
         return response()->json($alumno);
@@ -62,7 +62,7 @@ class AlumnoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Alumno $alumno)
+    public function update(Request $request, string $id)
     {
         $alumno = Alumno::find($id);
         $alumno->dni = $request->input('dni');
@@ -77,7 +77,7 @@ class AlumnoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Alumno $alumno)
+    public function destroy(string $id)
     {
         $alumno = Alumno::find($id);
         $alumno->delete();
