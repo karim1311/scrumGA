@@ -40,9 +40,9 @@ class CalificacionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Calificacion $calificacion)
+    public function show(string $id)
     {
-        //
+        return Calificacion::where('id',$id)->get();
     }
 
     /**
@@ -56,16 +56,25 @@ class CalificacionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Calificacion $calificacion)
+    public function update(Request $request, string $id)
     {
-        //
+        $calificaciones = Calificacion::all();
+        $califiacion = $calificaciones->find($id);
+        $califiacion->alumno_id = $request->alumno_id;
+        $califiacion->evaluacion_id = $request->evaluacion_id;
+        $califiacion->nota = $request->nota;
+        $califiacion->mensaje = $request->mensaje;
+        $califiacion->save();
+        return $califiacion;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Calificacion $calificacion)
+    public function destroy(string $id)
     {
-        //
+        $califiacion = Calificacion::find($id);
+        $califiacion->delete();
+        return "Calificacion eliminada correctamente";
     }
 }

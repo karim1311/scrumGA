@@ -39,9 +39,10 @@ class TipoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tipo $tipo)
+    public function show(string $id)
     {
-        //
+        $tipo = Tipo::find($id);
+        return response()->json($tipo);
     }
 
     /**
@@ -55,16 +56,24 @@ class TipoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tipo $tipo)
+    public function update(Request $request, string $id)
     {
-        //
+        $tipos = Tipo::all();
+        $tipo = $tipos->find($id);
+        $tipo->descripcion = $request->descripcion; 
+        $tipo->porcentajte = $request->porcentajte; 
+        $tipo->rango = $request->rango; 
+        $tipo->save();
+        return $tipo; 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tipo $tipo)
+    public function destroy(string $id)
     {
-        //
+        $tipo = Tipo::find($id);
+        $tipo->delete();
+        return "Tipo eliminado correctamente";
     }
 }

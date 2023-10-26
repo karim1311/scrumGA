@@ -39,9 +39,9 @@ class EvaluacionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Evaluacion $evaluacion)
+    public function show(string $id)
     {
-        //
+        return Evaluacion::where('id',$id)->get();
     }
 
     /**
@@ -55,16 +55,24 @@ class EvaluacionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Evaluacion $evaluacion)
+    public function update(Request $request, string $id)
     {
-        //
+        $evaluaciones = Evaluacion::all();
+        $evaluacion = $evaluaciones->find($id);
+        $evaluacion->descripcion = $request->descripcion;
+        $evaluacion->tipo_id = $request->tipo_id;
+        $evaluacion->fecha = $request->fecha;
+        $evaluacion->save();
+        return $evaluacion;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Evaluacion $evaluacion)
+    public function destroy(string $id)
     {
-        //
+        $evaluacion = Evaluacion::find($id);
+        $evaluacion->delete();
+        return "Evaluacion eliminada correctamente";
     }
 }
