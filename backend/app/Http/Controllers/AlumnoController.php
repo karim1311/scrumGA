@@ -38,6 +38,18 @@ class AlumnoController extends Controller
             'nombre' => 'required|string|max:255',
             'grupo_id' => 'required|numeric|min:1|max:4',
         ]);
+
+
+        $messages = [
+            'grupo_id.required' => 'El campo Grupo ID es obligatorio.',
+            'grupo_id.numeric' => 'El campo Grupo ID debe ser numérico.',
+            'grupo_id.between' => 'El campo Grupo ID debe estar entre 1 y 4.',
+
+        ];
+
+
+        $request->validate( $messages);
+
         $alumno->save();
         return "Alumno guardado correctamente";
     }
