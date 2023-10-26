@@ -31,10 +31,13 @@ class AlumnoController extends Controller
         $alumno = new Alumno();
         $alumno->dni = $request->dni;
         $alumno->nombre = $request->nombre;
-        $alumno->curso_id = $request->curso_id;
         $alumno->apellido = $request->apellido;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
         $alumno->grupo_id = $request->grupo_id;
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'grupo_id' => 'required|numeric|min:1|max:4',
+        ]);
         $alumno->save();
         return "Alumno guardado correctamente";
     }
@@ -44,7 +47,8 @@ class AlumnoController extends Controller
      */
     public function show(Alumno $alumno)
     {
-        //
+        $alumno = Alumno::find($id);
+        return response()->json($alumno);
     }
 
     /**
@@ -60,7 +64,14 @@ class AlumnoController extends Controller
      */
     public function update(Request $request, Alumno $alumno)
     {
-        //
+        $alumno = Alumno::find($id);
+        $alumno->dni = $request->input('dni');
+        $alumno->nombre = $request->input('nombre'); // Actualizar otros campos$alumno->save();
+        $alumno->apellido = $request->input('apellido');
+        $alumno->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $alumno->grupo_id = $request->input('grupo_id');
+        $alumno->save();
+        return response()->json($alumno);
     }
 
     /**
@@ -68,6 +79,8 @@ class AlumnoController extends Controller
      */
     public function destroy(Alumno $alumno)
     {
-        //
+        $alumno = Alumno::find($id);
+        $alumno->delete();
+        return "Alumno eliminado correctamente";
     }
 }
