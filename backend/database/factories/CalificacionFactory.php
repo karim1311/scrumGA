@@ -19,7 +19,7 @@ class CalificacionFactory extends Factory
         return [
             'alumno_id'=>fake()->numberBetween(1,15),
             'evaluacion_id'=>fake()->numberBetween(1,5),
-            'nota'=>fake()->numberBetween(10,100),
+            'nota'=>fake()->randomFloat(2,20,100),
             'mensaje'=>fake()->sentence(),
         ];
     }
