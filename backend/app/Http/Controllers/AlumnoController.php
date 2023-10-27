@@ -34,6 +34,7 @@ class AlumnoController extends Controller
         $alumno->apellido = $request->apellido;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
         $alumno->grupo_id = $request->grupo_id;
+
         $request->validate([
             'dni' => 'required|string|max:255',
             'nombre' => 'required|string|alpha:ascii|max:255',
@@ -43,15 +44,16 @@ class AlumnoController extends Controller
         ]);
 
 
-        $messages = [
-            'grupo_id.required' => 'El campo Grupo ID es obligatorio.',
-            'grupo_id.numeric' => 'El campo Grupo ID debe ser numérico.',
-            'grupo_id.between' => 'El campo Grupo ID debe estar entre 1 y 4.',
 
-        ];
+        // $messages = [
+        //     'grupo_id.required' => 'El campo Grupo ID es obligatorio.',
+        //     'grupo_id.numeric' => 'El campo Grupo ID debe ser numérico.',
+        //     'grupo_id.between' => 'El campo Grupo ID debe estar entre 1 y 4.',
+
+        // ];
 
 
-        $request->validate( $messages);
+        // $request->validate( $messages);
 
         $alumno->save();
         return "Alumno guardado correctamente";
