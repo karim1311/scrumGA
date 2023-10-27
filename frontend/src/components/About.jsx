@@ -1,69 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function About() {
-  const [alumnos, setAlumnos] = useState([
-    { id: 1, nombre: "Juan", apellido: "Pérez" },
-    { id: 2, nombre: "María", apellido: "López" },
-  ]);
+function AlumnosList() {
+  const [alumnos, setAlumnos] = useState([]);
 
-  const handleDeleteAlumno = (id) => {
-    const updatedAlumnos = alumnos.filter((alumno) => alumno.id !== id);
-    setAlumnos(updatedAlumnos);
-  }
+  useEffect(() => {
+    // Realiza una solicitud GET a la API para obtener todos los alumnos
+    axios.get('http://localhost:8000/api/alumnos')
+      .then(response => {
+        console.log(response);
+        setAlumnos(response.data);
+      })
+      .catch(error => {
+        console.error('Error al cargar los datos de los alumnos:', error);
+      });
+  }, []);
 
   return (
-    <div class="flex justify-center flex-col items-center mt-40">
-      <h2 class="text-center mb-8 text-2xl font-bold">Lista de Alumnos</h2>
-      <table class="border-separate border-spacing-2 border border-slate-500">
-      <thead>
-          <tr>
-            <th class="border border-slate-600">ID</th>
-            <th class="border border-slate-600">Nombre</th>
-            <th class="border border-slate-600">Apellido</th>
-            <th class="border border-slate-600">Acciones</th>
-          </tr>
-        </thead>
-  <tbody>
-          {alumnos.map((alumno) => (
-            <tr key={alumno.id}>
-              <td class="border border-slate-600">{alumno.id}</td>
-              <td class="border border-slate-600">{alumno.nombre}</td>
-              <td class="border border-slate-600">{alumno.apellido}</td>
-              <td class="border border-slate-600">
-                <button onClick={() => handleDeleteAlumno(alumno.id)}>
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-</table>
-      {/* <table >
+    <div>
+      <h1>Lista de Alumnos</h1>
+      <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>DNI</th>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Acciones</th>
+            <th>Correo</th>
+            <th>Fecha de Nacimiento</th>
+            <th>ID de Grupo</th>
           </tr>
         </thead>
         <tbody>
-          {alumnos.map((alumno) => (
+          {alumnos.map(alumno => (
             <tr key={alumno.id}>
-              <td>{alumno.id}</td>
+              <td>{alumno.dni}</td>
               <td>{alumno.nombre}</td>
               <td>{alumno.apellido}</td>
-              <td>
-                <button onClick={() => handleDeleteAlumno(alumno.id)}>
-                  Eliminar
-                </button>
-              </td>
+              <td>{alumno.correo}</td>
+              <td>{alumno.fecha_nacimiento}</td>
+              <td>{alumno.grupo_id}</td>
             </tr>
           ))}
         </tbody>
-      </table> */}
+      </table>
     </div>
   );
 }
 
-export default About;
+export default AlumnosList;

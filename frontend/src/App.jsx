@@ -19,16 +19,16 @@ function App() {
         <ul className='pl-5 pt-40'>
           <li className='pb-5'>
             <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16'>Inico</span>
-            <i class="fa-solid fa-chalkboard-user"/></Link>
+            <i className="fa-solid fa-chalkboard-user"/></Link>
             
           </li>
           <li className='pb-5'>
             <Link to="/About/1" className='text-white text-2xl'><span className='m-3'>Lista de Alumnos</span>
-            <i class="fa-solid fa-graduation-cap"/></Link> 
+            <i className="fa-solid fa-graduation-cap"/></Link> 
           </li>
           <li className='pb-5'>
             <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3'>Registro  Alumno</span>
-            <i class="fa-solid fa-chalkboard"/></Link>
+            <i className="fa-solid fa-chalkboard"/></Link>
           </li>
         </ul>
       </nav>
