@@ -65,11 +65,11 @@ class TipoController extends Controller
     {
         $tipos = Tipo::all();
         $tipo = $tipos->find($id);
-        $tipo->descripcion = $request->descripcion; 
-        $tipo->porcentajte = $request->porcentajte; 
-        $tipo->rango = $request->rango; 
+        $tipo->descripcion = $request->descripcion;
+        $tipo->porcentaje = $request->porcentaje;
+        $tipo->rango = $request->rango;
         $tipo->save();
-        return $tipo; 
+        return $tipo;
     }
 
     /**
