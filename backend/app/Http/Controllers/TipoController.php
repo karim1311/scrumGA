@@ -69,6 +69,15 @@ class TipoController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        try {
+            $validated = $request->validate([
+            'descripcion' => 'required|string|min:2|max:255',
+            'porcentaje' => 'required|numeric|min:1|max:100',
+            'rango' => 'required|numeric|min:1|max:100',
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()],422);
+        }
         $tipos = Tipo::all();
         $tipo = $tipos->find($id);
         $tipo->descripcion = $request->descripcion;

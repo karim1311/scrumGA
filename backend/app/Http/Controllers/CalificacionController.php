@@ -76,7 +76,7 @@ class CalificacionController extends Controller
             $validated = $request->validate([
             'alumno_id' => 'required|numeric',
             'evaluacion_id' => 'required|numeric',
-            'nota' => 'required|numeric|decimal:2|min:1|max:100',
+            'nota' => 'required|numeric|decimal:0,2|min:1|max:100',
             'mensaje' => 'max:255',
             ]);
         } catch (Exception $e) {
