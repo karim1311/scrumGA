@@ -34,13 +34,15 @@ class AlumnoController extends Controller
         $alumno->apellido = $request->apellido;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
         $alumno->grupo_id = $request->grupo_id;
-        // $request->validate([
-        //     'dni' => 'required|unique|string|max:255',
-        //     'nombre' => 'required|string|alpha:ascii|max:255',
-        //     'apellido' => 'required|string|alpha:ascii|max:255',
-        //     'fecha_nacimiento' => 'required|max:255',
-        //     'grupo_id' => 'required|numeric|min:1|max:4',
-        // ]);
+
+        $request->validate([
+            'dni' => 'required|string|max:255',
+            'nombre' => 'required|string|alpha:ascii|max:255',
+            'apellido' => 'required|string|alpha:ascii|max:255',
+            'fecha_nacimiento' => 'required|max:255',
+            'grupo_id' => 'required|numeric|min:1|max:4',
+        ]);
+
 
 
         // $messages = [
