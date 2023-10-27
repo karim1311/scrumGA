@@ -70,6 +70,15 @@ class EvaluacionController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        try {
+            $validated = $request->validate([
+            'descripcion' => 'bail|required|string|max:255',
+            'tipo_id' => 'required|numeric',
+            'fecha' => 'required|date'
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()],422);
+        }
         $evaluaciones = Evaluacion::all();
         $evaluacion = $evaluaciones->find($id);
         $evaluacion->descripcion = $request->descripcion;
