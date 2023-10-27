@@ -39,14 +39,14 @@ Route::controller(TipoController::class)->group(function(){
 Route::controller(EvaluacionController::class)->group(function(){
     Route::get('/evaluaciones','index');
     Route::get('/evaluacion/{id}', 'show');
-    Route::post('/evaluacion', 'store');
+    Route::post('/evaluacion', 'store')->middleware('combinacion-unica-evaluacion:descripcion,fecha');
     Route::put('/evaluacion/{id}', 'update');
     Route::delete('/evaluacion/{id}', 'destroy');
 });
 Route::controller(CalificacionController::class)->group(function(){
     Route::get('/calificaciones','index');
     Route::get('/calificacion/{id}', 'show');
-    Route::post('/calificacion', 'store');
+    Route::post('calificacion', 'store')->middleware('combinacion-unica-calificacion:alumno_id,evaluacion_id');
     Route::put('/calificacion/{id}', 'update');
     Route::delete('/calificacion/{id}', 'destroy');
 });

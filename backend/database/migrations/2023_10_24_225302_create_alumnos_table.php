@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('dni')->unique();
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('correo')->unique();
             $table->date('fecha_nacimiento');
             $table->integer('grupo_id');
             $table->timestamps();
