@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tipo;
+use Exception;
 use Illuminate\Http\Request;
 
 class TipoController extends Controller
@@ -28,17 +29,22 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
+        try {
+            $validated = $request->validate([
+            'descripcion' => 'required|string|min:2|max:255',
+            'porcentaje' => 'required|numeric|min:1|max:100',
+            'rango' => 'required|numeric|min:1|max:100',
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()],422);
+        }
+
         $tipo = new Tipo();
         $tipo->descripcion = $request->descripcion;
         $tipo->porcentaje = $request->porcentaje;
         $tipo->rango = $request->rango;
-        $request->validate([
-            'descripcion' => 'required|unique|string|alpha:ascii|max:255',
-            'porcentaje' => 'required|numeric|min:1|max:100',
-            'rango' => 'required|numeric|min:1|max:100',
-        ]);
         $tipo->save();
-        return "Tipo guardado correctamente";
+        return response()->json("Tipo guardado correctamente");
     }
 
     /**
