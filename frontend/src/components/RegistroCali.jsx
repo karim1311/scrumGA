@@ -1,10 +1,11 @@
-import React from "react";
+import React from 'react';
 
-function Contact() {
+
+export default function RegistroCali() {
   return (
     <div class="flex flex-col justify-center items-center">
       <div class="mt-20">
-        <p class="text-xl mb-4">Registra un alumno nuevo</p>
+        <p class="text-xl mb-4">Registra una nueva nota</p>
         <p class="max-w-screen-sm h-14 text-sm p-2 rounded">
           Bienvenido
           <br />
@@ -12,8 +13,8 @@ function Contact() {
           la izquierda
         </p>
       </div>
-      <div class="w-[50%] bg-blue-200  rounded-lg mt-9">
-        <h2 class="text-center fong-bold text-2xl">Añadir alumno</h2>
+      <div class=" w-[50%] bg-slate-200  rounded-lg mt-9">
+        <h2 class="text-center fong-bold text-2xl">Añadir Calificación</h2>
         <form
           action="#"
           method="post"
@@ -21,70 +22,49 @@ function Contact() {
         >
           <label class="block">
             <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-              DNI
+              Nombre alumno
             </span>
             <input
               type="text"
-              name="dni"
-              class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-              placeholder="Identificación"
-            />
-          </label>
-          <label class="block">
-            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-              Nombre
-            </span>
-            <input
-              type="text"
-              name="nombre"
+              name="alumno_id"
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
               placeholder="Nombres"
             />
           </label>
           <label class="block">
             <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-              Apellido
+              Tipo de evaluación
             </span>
             <input
               type="text"
-              name="apellido"
+              name="evaluacion_id"
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-              placeholder="apellidos"
+              placeholder="Evaluación"
             />
           </label>
           <label class="block">
             <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-              correo
-            </span>
-            <input
-              type="email"
-              name="correo"
-              class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-              placeholder="apellidos"
-            />
-          </label>
-          <label class="block">
-            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-              Fecha de Nacimiento
-            </span>
-            <input
-              type="date"
-              name="fecha_nacimiento"
-              class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-            />
-          </label>
-          <label>
-            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-              Grupo
+              Calificación
             </span>
             <input
               type="number"
-              min={"1"}
-              max={"5"}
-              name="grupo_id"
+              min="0"
+              max="10"
+              name="nota"
               class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+              placeholder='Nota'
             />
           </label>
+
+          <label class="block">
+            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+              Mensaje
+            </span>
+            <textarea name="mensaje" cols="25" rows="5" 
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            placeholder='Escribe tu observación'/>
+          </label>
+
           <button
             type="submit"
             class=" mt-10 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
@@ -94,7 +74,5 @@ function Contact() {
         </form>
       </div>
     </div>
-  );
+  )
 }
-
-export default Contact;
