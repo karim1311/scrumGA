@@ -4,13 +4,14 @@ import axios from 'axios'
 
 function Home() {
   const [alumnos, setAlumnos] = useState([])
-  
+    
   async function conectarBackend(){
     const response = await fetch("http://localhost:8000/api/alumnos");
     const data = await response.json();
     setAlumnos(data);
     console.log(data);
   }
+  
   async function enviarDatos(){
     try{
       const body = {};
@@ -28,17 +29,15 @@ function Home() {
     }
   }
 
-
-
   return (
     <div className='pt-20'>
       <h2 className='font-bold text-2xl'>Página de inicio</h2>
       <p className='pt-5'>Bienvenido a la página de inicio de mi aplicación.</p>
-      <>
+      
       <h1>Academia</h1>
-      <button onClick={conectarBackend}>Conectar API</button>
+      <button onClick={conectarBackend}>Mostrar lista</button>
       {alumnos.map((el, key)=>{
-        return <h2 key={key}>{el.nombre}</h2>
+        return <h2 key={key}>{el.nombre} </h2>
       })}<br/>
       DNI:
       <input type="text" name='dni' className='input-alumno'/>
@@ -47,9 +46,9 @@ function Home() {
       apellido:
       <input type="text" name='apellido' className='input-alumno'/>
       correo:
-      <input type="text" name='correo' className='input-alumno'/>
+      <input type="email" name='correo' className='input-alumno'/>
       fecha nacimiento:
-      <input type="text" name='fecha_nacimiento' className='input-alumno'/>
+      <input type="date" name='fecha_nacimiento' className='input-alumno'/>
       Grupo id:
       <select name="grupo_id" id="" className='input-alumno'>
         <option value="1">1</option>
@@ -58,13 +57,7 @@ function Home() {
         <option value="4">4</option>
       </select>
       {/* <input type="text" name='grupo_id' className='input-alumno'/> */}
-      <button onClick={enviarDatos}>Guardar</button>
-
-
-      
-    </>
-      
-
+      <button onClick={enviarDatos}>Guardar</button><br /><br />
 
     </div>
   );

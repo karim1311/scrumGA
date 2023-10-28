@@ -1,9 +1,17 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
-import Home from './components/home';
+import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+
+import CreateEmployee from './components/employee/CreateEmployee';
+import EditEmployee from './components/employee/EditEmployee';
+import ShowEmployees from './components/employee/ShowEmployees';
+
+import CreateAlumno from './components/alumno/CreateAlumno';
+import EditAlumno from './components/alumno/EditAlumno';
+import ShowAlumnos from './components/alumno/ShowAlumnos';
 
 function App() {
   
@@ -32,6 +40,27 @@ function App() {
             <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3'>Registro  Alumno</span>
             <i className="fa-solid fa-chalkboard"/></Link>
           </li>
+          <hr />
+          <li className='pb-5'>
+            <Link to="/employees" className='text-white text-2xl'><span className='m-3'>Empleados</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+          <li className='pb-5'>
+            <Link to="/employeecreate" className='text-white text-2xl'><span className='m-3'>Crear empleado</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+
+          <hr />
+          <li className='pb-5'>
+            <Link to="/alumnos" className='text-white text-2xl'><span className='m-3'>Alumnos</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+          <li className='pb-5'>
+            <Link to="/alumnocreate" className='text-white text-2xl'><span className='m-3'>Crear Alumno</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+          
+
         </ul>
       </nav>
       
@@ -40,6 +69,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/About/:id" element={<About />} />
           <Route path="/Contact/:id" element={<Contact />} />
+
+          <Route path='/employees' element={ <ShowEmployees/>} />
+          <Route path='/employeecreate' element={ <CreateEmployee/>} />
+          <Route path='/employeeedit/:id' element={ <EditEmployee/>} />
+
+          <Route path='/alumnos' element={ <ShowAlumnos/>} />
+          <Route path='/alumnocreate' element={ <CreateAlumno/>} />
+          <Route path='/alumnoedit/:id' element={ <EditAlumno/>} />
+
         </Routes>
       </div>
     </div>
@@ -50,61 +88,3 @@ function App() {
 export default App
 
 
-/*
-import { useState } from 'react'
-import axios from 'axios'
-import './App.css'
-
-function App() {
-  const [pedidos, setPedidos] = useState([])
-  
-  async function conectarBackend(){
-    const response = await fetch("http://localhost:8000/api/pedidos");
-    const data = await response.json();
-    setPedidos(data);
-    console.log(data);
-  }
-  async function enviarDatos(){
-    try{
-      const body = {};
-
-      const inputPedido = Array.from(document.getElementsByClassName('input-cliente'));
-      inputPedido.forEach((e)=>{
-        body[e.name] = e.value;
-      })
-
-      const response = await axios.post("http://localhost:8000/api/pedidos", body);
-      console.log("respuesta del server", response.data);
-
-    }catch (error){
-      console.error("Hay un error", error);
-    }
-  }
-  return (
-    <>
-      <h1>Restaurante</h1>
-      <button onClick={conectarBackend}>Conectar API</button>
-      {pedidos.map((el, key)=>{
-        return <h2 key={key}>{el.nombre}</h2>
-      })}<br/>
-      cliente ID:
-      <input type="text" name='clienteId' className='input-cliente'/>
-      Plato ID:
-      <input type="text" name='platoId' className='input-cliente'/>
-      cantidad:
-      <input type="text" name='cantidad' className='input-cliente'/>
-      subtotal:
-      <input type="text" name='subtotal' className='input-cliente'/>
-      <button onClick={enviarDatos}>Guardar</button>
-    </>
-  )
-}
-
-export default App
-
-
-
-
-
-
-*/
