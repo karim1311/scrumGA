@@ -22,7 +22,6 @@ function App() {
           <li className='pb-5 bg-'>
             <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16  hover:text-blue-400'>Inicio</span>
             <i class="fa-solid fa-chalkboard-user"/></Link>
-            
           </li>
           <li className='pb-5'>
             <Link to="/About/1" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>

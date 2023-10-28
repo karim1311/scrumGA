@@ -20,7 +20,7 @@ export default function alumnos() {
 
   return (
     <div className="flex justify-center flex-col items-center mt-20">
-      <h2 className="text-center mb-8 text-2xl font-bold">Calificaciones</h2>
+      <h2 className="text-center mb-8 text-2xl font-bold">Lista de alumnos</h2>
       <table className="border-separate border-spacing-2 border border-slate-500">
         <thead>
             <tr>
