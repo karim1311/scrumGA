@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tipos', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
-            $table->string('porcentaje');
-            $table->string('rango');
+            $table->string('descripcion')->unique();
+            $table->integer('porcentaje');
+            $table->integer('rango');
             $table->timestamps();
         });
     }

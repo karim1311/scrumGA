@@ -4,6 +4,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CalificacionController;
 use App\Http\Controllers\EvaluacionController;
 use App\Http\Controllers\TipoController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,14 +40,24 @@ Route::controller(TipoController::class)->group(function(){
 Route::controller(EvaluacionController::class)->group(function(){
     Route::get('/evaluaciones','index');
     Route::get('/evaluacion/{id}', 'show');
-    Route::post('/evaluacion', 'store');
+    Route::post('/evaluacion', 'store')->middleware('combinacion-unica-evaluacion:descripcion,fecha');
     Route::put('/evaluacion/{id}', 'update');
     Route::delete('/evaluacion/{id}', 'destroy');
 });
 Route::controller(CalificacionController::class)->group(function(){
     Route::get('/calificaciones','index');
     Route::get('/calificacion/{id}', 'show');
-    Route::post('/calificacion', 'store');
+    Route::post('calificacion', 'store')->middleware('combinacion-unica-calificacion:alumno_id,evaluacion_id');
     Route::put('/calificacion/{id}', 'update');
     Route::delete('/calificacion/{id}', 'destroy');
+});
+
+
+Route::controller(EmployeeController::class)->group(function (){
+    Route::get('/employees', 'index');
+    Route::post('/employee', 'store');
+    Route::get('/employee/{id}', 'show');
+    Route::put('/employee/{id}', 'update');
+    Route::delete('/employee/{id}', 'destroy');
+
 });
