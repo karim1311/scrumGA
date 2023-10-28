@@ -20,6 +20,7 @@ class AlumnoFactory extends Factory
             'dni' => fake()->randomNumber(8, true),
             'nombre' =>fake()->firstName(),
             'apellido' =>fake()->lastName(),
+            'correo' =>fake()->email(),
             'fecha_nacimiento' =>fake()->date(),
             'grupo_id' =>fake()->numberBetween(1,4),
         ];
