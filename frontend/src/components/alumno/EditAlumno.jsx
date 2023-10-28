@@ -44,7 +44,7 @@ const EditAlumno = () => {
     }, [])
   return (
     <div>
-        <h2>Edit Alumno</h2>
+        <h2>Editar Alumno</h2>
         <form onSubmit={update}>
             <div className='mb-3'>
                 <label className='form-label'>DNI</label>

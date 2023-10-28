@@ -11,6 +11,10 @@ import CreateEmployee from './components/employee/CreateEmployee';
 import EditEmployee from './components/employee/EditEmployee';
 import ShowEmployees from './components/employee/ShowEmployees';
 
+import CreateCalificaciones from './components/calificaciones/CreateCalificaciones';
+import EditCalificaciones from './components/calificaciones/EditCalificaciones';
+import ShowCalificaciones from './components/calificaciones/ShowCalificaciones';
+
 import CreateAlumno from './components/alumno/CreateAlumno';
 import EditAlumno from './components/alumno/EditAlumno';
 import ShowAlumnos from './components/alumno/ShowAlumnos';
@@ -25,32 +29,32 @@ function App() {
         <div className='text-white pb-15 text-2xl text-center pt-10'>
           <h2>Admin</h2>
           <p>[name Admin]</p>
-         
+          
         </div>
-      
+        
         <ul className='pl-5 pt-40'>
           <li className='pb-5 bg-'>
             <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16  hover:text-blue-400'>Inicio</span>
-            <i class="fa-solid fa-chalkboard-user"/></Link>
+            <i className="fa-solid fa-chalkboard-user"/></Link>
           </li>
           <li className='pb-5'>
             <Link to="/About/1" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
-            <i class="fa-solid fa-graduation-cap"/></Link> 
+            <i className="fa-solid fa-graduation-cap"/></Link> 
           </li>
           <li className='pb-5'>
 
             <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registro  Alumno</span>
-            <i class="fa-solid fa-user-pen"></i></Link>
+            <i className="fa-solid fa-user-pen"></i></Link>
           </li>
           <li className='pb-5'>
-            <Link to="/Notes/3" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Calificaciones</span>
-            <i class="fa-solid fa-chalkboard"/></Link>
+            <Link to="/calificaciones" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Calificaciones</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
           </li>
           <li className='pb-5'>
             <Link to="/RegistroCali/4" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registro Calificación</span>
-            <i class="fa-solid fa-pen-to-square"></i></Link>
+            <i className="fa-solid fa-pen-to-square"></i></Link>
           </li>
-         
+          
           <hr />
           <li className='pb-5'>
             <Link to="/employees" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Empleados</span>
@@ -91,6 +95,10 @@ function App() {
           <Route path='/alumnos' element={ <ShowAlumnos/>} />
           <Route path='/alumnocreate' element={ <CreateAlumno/>} />
           <Route path='/alumnoedit/:id' element={ <EditAlumno/>} />
+          
+          <Route path='/calificaciones' element={ <ShowAlumnos/>} />
+          <Route path='/calificacionescreate' element={ <CreateAlumno/>} />
+          <Route path='/calificacionesedit/:id' element={ <EditAlumno/>} />
 
         </Routes>
       </div>
