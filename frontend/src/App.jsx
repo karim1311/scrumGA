@@ -31,24 +31,24 @@ function App() {
         <ul className='pl-5 pt-40'>
           <li className='pb-5 bg-'>
             <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16  hover:text-blue-400'>Inicio</span>
-            <i class="fa-solid fa-chalkboard-user"/></Link>
+            <i className="fa-solid fa-chalkboard-user"/></Link>
           </li>
           <li className='pb-5'>
             <Link to="/About/1" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
-            <i class="fa-solid fa-graduation-cap"/></Link> 
+            <i className="fa-solid fa-graduation-cap"/></Link> 
           </li>
           <li className='pb-5'>
 
             <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registro  Alumno</span>
-            <i class="fa-solid fa-user-pen"></i></Link>
+            <i className="fa-solid fa-user-pen"></i></Link>
           </li>
           <li className='pb-5'>
             <Link to="/Notes/3" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Calificaciones</span>
-            <i class="fa-solid fa-chalkboard"/></Link>
+            <i className="fa-solid fa-chalkboard"/></Link>
           </li>
           <li className='pb-5'>
             <Link to="/RegistroCali/4" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registro Calificación</span>
-            <i class="fa-solid fa-pen-to-square"></i></Link>
+            <i className="fa-solid fa-pen-to-square"></i></Link>
           </li>
          
           <hr />
