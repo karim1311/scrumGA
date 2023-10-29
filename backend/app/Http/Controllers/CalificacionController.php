@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Calificacion;
+use Exception;
 use Illuminate\Http\Request;
 
 class CalificacionController extends Controller
@@ -28,19 +29,23 @@ class CalificacionController extends Controller
      */
     public function store(Request $request)
     {
+        try {
+            $validated = $request->validate([
+            'alumno_id' => 'required|numeric',
+            'evaluacion_id' => 'required|numeric',
+            'nota' => 'required|numeric|decimal:0,2|min:1|max:100',
+            'mensaje' => 'max:255',
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 422);
+        }
         $calificacion = new Calificacion();
         $calificacion->alumno_id = $request->alumno_id;
         $calificacion->evaluacion_id = $request->evaluacion_id;
         $calificacion->nota = $request->nota;
         $calificacion->mensaje = $request->mensaje;
-        $request->validate([
-            'alumno_id' => 'bail|required|numeric|max:255',
-            'evaluacion_id' => 'required|numeric|max:255',
-            'nota' => 'required|numeric|decimal:2|min:1|max:100',
-            'mensaje' => 'alpha_num:ascii|max:255',
-        ]);
         $calificacion->save();
-        return "Calificacion guardada correctamente";
+        return response()->json("Calificacion guardada correctamente");
     }
 
     // HECHO : hacer que en el campo nota, solo acepte valores del 1 al 100, y hasta 2 numeros decimales
@@ -51,7 +56,7 @@ class CalificacionController extends Controller
      */
     public function show(string $id)
     {
-        return Calificacion::where('id',$id)->get();
+        return Calificacion::where('id', $id)->get();
     }
 
     /**
@@ -67,6 +72,16 @@ class CalificacionController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        try {
+            $validated = $request->validate([
+            'alumno_id' => 'required|numeric',
+            'evaluacion_id' => 'required|numeric',
+            'nota' => 'required|numeric|decimal:0,2|min:1|max:100',
+            'mensaje' => 'max:255',
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 422);
+        }
         $calificaciones = Calificacion::all();
         $califiacion = $calificaciones->find($id);
         $califiacion->alumno_id = $request->alumno_id;
