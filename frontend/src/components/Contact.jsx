@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact() {
   return (
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center bg-[#323744] h-screen ">
       <div class="mt-20">
         <p class="text-xl mb-4">Registra un alumno nuevo</p>
         <p class="max-w-screen-sm h-14 text-sm p-2 rounded">

@@ -9,26 +9,27 @@ function App() {
 
   return (
     <Router>
-    <div className="d-flex">
-      <nav  className="flex-1 bg-blue-700 h-screen" >
-        <div className='text-white pb-15 text-2xl text-center pt-10'>
+    <div className="flex ">
+      <nav  className=" bg-[#20232f] h-screen w-60" >
+        <div className='text-[#06ebfc] pb-15 text-2xl text-center pt-10'>
           <h2>Admin</h2>
-          <p>[name Admin]</p>
+          <h3 className='underline'>Gestion Academica</h3>
         </div>
       
         <ul className='pl-5 pt-40'>
           <li className='pb-5'>
-            <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16'>Inico</span>
-            <i class="fa-solid fa-chalkboard-user"/></Link>
+            
+            <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16 hover:text-[#06ebfc]'>Inico</span>
+            <i className="fa-solid fa-chalkboard-user"/></Link>
             
           </li>
           <li className='pb-5'>
-            <Link to="/About/1" className='text-white text-2xl'><span className='m-3'>Lista de Alumnos</span>
+            <Link to="/About/1" className='text-white text-2xl'><span className='m-3 hover:text-[#06ebfc]'>Lista de Alumnos</span>
             <i class="fa-solid fa-graduation-cap"/></Link> 
           </li>
           <li className='pb-5'>
-            <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3'>Registro  Alumno</span>
-            <i class="fa-solid fa-chalkboard"/></Link>
+            <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3 hover:text-[#06ebfc]'>Registro  Alumno</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
           </li>
         </ul>
       </nav>
