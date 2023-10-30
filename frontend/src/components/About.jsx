@@ -65,28 +65,28 @@ export default function Alumnos() {
       </div>
       <table class="table text-gray-400 border-separate space-y-6 text-sm">
         <thead class="bg-blue-500 text-white">
-          <tr>
-                <th class="p-3">ID</th>
-                <th class="p-3">DNI</th>
-                <th class="p-3 text-left">NOMBRE</th>
-                <th class="p-3 text-left">APELLIDO</th>
-                <th class="p-3 text-left">CORREO</th>
-                <th class="p-3 text-left">FECHA DE NACIMIENTO</th>
-                <th class="p-3 text-left">GRUPO</th>
-                <th class="p-3 text-left">ACCIÓN</th>
+          <tr className="tra">
+                <th className="p-3">ID</th>
+                <th className="p-3">DNI</th>
+                <th className="p-3 text-left">NOMBRE</th>
+                <th className="p-3 text-left">APELLIDO</th>
+                <th className="p-3 text-left">CORREO</th>
+                <th className="p-3 text-left">FECHA DE NACIMIENTO</th>
+                <th className="p-3 text-left">GRUPO</th>
+                <th className="p-3 text-left">ACCIÓN</th>
            </tr>
         </thead>
         <tbody>
         {resultadosFiltrados.map((alumno) => (
-            <tr key={alumno.id} class="bg-blue-200 lg:text-black text-center">
-              <td class="p-3 font-extrabold"  >{alumno.id}</td>
-              <td class="p-3"  >{alumno.dni}</td>
-              <td class="p-3 font-medium capitalize">{alumno.nombre}</td>
-              <td class="p-3 font-medium capitalize">{alumno.apellido}</td>
-              <td class="p-3"  >{alumno.correo}</td> 
-              <td class="p-3"  >{alumno.fecha_nacimiento}</td>
-              <td class="p-3"  >{alumno.grupo_id}</td>
-              <td class="p-3"  >
+            <tr key={alumno.id} className="bg-blue-200 lg:text-black text-center tra">
+              <td className="p-3 font-extrabold"  >{alumno.id}</td>
+              <td className="p-3"  >{alumno.dni}</td>
+              <td className="p-3 font-medium capitalize">{alumno.nombre}</td>
+              <td className="p-3 font-medium capitalize">{alumno.apellido}</td>
+              <td className="p-3"  >{alumno.correo}</td> 
+              <td className="p-3"  >{alumno.fecha_nacimiento}</td>
+              <td className="p-3"  >{alumno.grupo_id}</td>
+              <td className="p-3"  >
                 <Link to={`/alumnoedit/${alumno.id}`} className="mr-3">
                 <i class="fa-solid fa-pencil text-green-700"/>
                 </Link>

@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
       <div className="d-flex">
-        <nav className="flex-1 bg-blue-900 h-screen drop-shadow-2xl rounded-lg">
+        <nav className=" flex-1 bg-blue-900 drop-shadow-2xl rounded-lg">
           <div className="text-white pb-15 text-2xl text-center pt-10">
             <h2>Admin</h2>
             <p>[name Admin]</p>
@@ -32,6 +32,7 @@ function App() {
                 <span className="m-3 mr-16  hover:text-blue-400">Inicio</span>
               </Link>
             </li>
+            <hr className="mb-2"/>
             <li className="pb-5">
               <Link to="/About/1" className="text-white text-2xl">
               <i class="fa-solid fa-graduation-cap mr-3" />
@@ -68,7 +69,7 @@ function App() {
               </Link>
             </li>
 
-            <hr />
+            <hr className="mb-2"/>
             <li className="pb-5">
               <Link to="/employees" className="text-white text-2xl">
               <i class="fa-solid fa-building mr-3" />
@@ -84,7 +85,8 @@ function App() {
               </Link>
             </li>
 
-            <hr />
+                              {/* esto de abajo ya esta implementado arriba */}
+           {/*  <hr /> 
             <li className="pb-5">
               <Link to="/alumnos" className="text-white text-2xl">
               <i class="fa-solid fa-graduation-cap mr-3" />
@@ -98,7 +100,7 @@ function App() {
                 <span className="m-3">Registrar Alumno</span>
                 
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
