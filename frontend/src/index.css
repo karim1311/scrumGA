@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,500&family=Roboto+Serif:ital,opsz,wght@1,8..144,100&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.table {
+    border-spacing: 0 15px;
+  }
+
+  i {
+    font-size: 1rem !important;
+  }
+
+  .table tr {
+    border-radius: 20px;
+  }
+
+  .tra td:nth-child(n + 8),
+  .tra th:nth-child(n + 8) {
+    border-radius:0 0.625rem 0.625rem 0;
+  }
+  .trc td:nth-child(n + 6),
+  .trc th:nth-child(n + 6) {
+    border-radius:0 0.625rem 0.625rem 0;
+  }
+
+  tr td:nth-child(1),
+  tr th:nth-child(1) {
+    border-radius:  0.625rem 0 0 0.625rem ;
+  }
