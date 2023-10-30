@@ -19,30 +19,31 @@ export default function Notes() {
   }, []);
 
   return (
-    <div className="flex justify-center flex-col items-center mt-20">
-      <h2 className="text-center mb-8 text-2xl font-bold">Calificaciones</h2>
-      <table className="border-separate border-spacing-2 border border-slate-500">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>EVALUACIÓN</th>
-                <th>NOTA</th>
-                <th>MENSAJE</th>
+    <div className="flex justify-center flex-col items-center mt-7">
+      <h2 className="text-center mb-8 text-2xl font-bold font-roboto">Calificaciones</h2>
+      <table class="table text-gray-400 border-separate space-y-6 text-sm">
+        <thead class="bg-blue-500 text-white">
+          <tr className="trc">
+                <th className="p-3" >ID</th>
+                <th className="p-3 text-left" >NOMBRE</th>
+                <th className="p-3 text-left" >EVALUACIÓN</th>
+                <th className="p-3 text-left" >NOTA</th>
+                <th className="p-3 text-left text-center" >MENSAJE</th>
+                <th className="p-3 text-left" >Accion</th>
             </tr>
+
         </thead>
-        
         <tbody>
-          {notas.map((nota) => (
-            <tr key={nota.id}>
-              <td className="border border-slate-600">{nota.id}</td>
-              <td className="border border-slate-600">{nota.nombre}</td>
-              <td className="border border-slate-600">{nota.evaluacion}</td>
-              <td className="border border-slate-600">{nota.nota}</td>
-              <td className="border border-slate-600">{nota.mensaje}</td>
-              <td className="border border-slate-600">
-                <button onClick={() => handleDeleteAlumno(nota.id)}>
-                  Eliminar
+        {notas.map((nota) => (
+            <tr key={nota.id} className="bg-blue-200 lg:text-black text-center trc">
+              <td className="p-3 font-extrabold">{nota.id}</td>
+              <td className="p-3 font-medium capitalize">{nota.nombre}</td>
+              <td className="p-3 font-medium capitalize">{nota.evaluacion}</td>
+              <td className="p-3">{nota.nota}</td>
+              <td className="p-3">{nota.mensaje}</td>
+              <td className="p-3">
+                <button onClick={() => handleDeleteNota(nota.id)}>
+                <i class="fa-solid fa-trash-can text-red-700"/>
                 </button>
               </td>
             </tr>
@@ -52,3 +53,6 @@ export default function Notes() {
     </div>
   );
 }
+
+
+ 
