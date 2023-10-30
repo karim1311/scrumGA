@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/evaluaciones'
-const CreateEvaluaciones = () => {
+const endpoint = 'http://localhost:8000/api/evaluacion'
+const CreateEvaluacion = () => {
 
     const [descripcion, setDescripcion] = useState('')
     const [tipo_id, setTipoId] = useState('')
@@ -13,7 +13,6 @@ const CreateEvaluaciones = () => {
         e.preventDefault();
         await axios.post(endpoint, { descripcion: descripcion, tipo_id: tipo_id})
         navigate('/')
-
     }
     return (
         <div>
@@ -44,4 +43,4 @@ const CreateEvaluaciones = () => {
     )
 }
 
-export default CreateEvaluaciones
+export default CreateEvaluacion
