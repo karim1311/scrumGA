@@ -94,6 +94,7 @@ export default function Alumnos() {
                 <i class="fa-solid fa-trash-can text-red-700"/>
                 </button>
               </td>
+>>>>>
             </tr>
           ))}
         </tbody>
@@ -101,6 +102,7 @@ export default function Alumnos() {
       <Routes>
       <Route path={`/alumnoedit/${alumno.id}`} element={<EditAlumno />} />
       </Routes>
+>
     </div>
   </div>
 </div>
@@ -108,4 +110,3 @@ export default function Alumnos() {
   );
 }
 
- 
