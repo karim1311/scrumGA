@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import EditAlumno from "./alumno/EditAlumno";
 
 export default function Alumnos() {
   const [alumno, setAlumno] = useState([]);
@@ -32,6 +34,10 @@ export default function Alumnos() {
     setBusqueda(valorBusqueda);
   };
 
+  const handleEditAlumno = (event) => {
+<Link>
+</Link>
+  }
   //console.log(alumno);
   //console.log(resultadosFiltrados);
   return (
@@ -81,19 +87,24 @@ export default function Alumnos() {
               <td class="p-3"  >{alumno.fecha_nacimiento}</td>
               <td class="p-3"  >{alumno.grupo_id}</td>
               <td class="p-3"  >
-                <button onClick={() => handleDeleteAlumno(alumno.id)}>
-                <i class="fa-solid fa-trash-can text-red-700"></i>
+                <Link to={`/alumnoedit/${alumno.id}`} className="mr-3">
+                <i class="fa-solid fa-pencil text-green-700"/>
+                </Link>
+                <button className="ml-3" onClick={() => handleDeleteAlumno(alumno.id)}>
+                <i class="fa-solid fa-trash-can text-red-700"/>
                 </button>
               </td>
             </tr>
           ))}
-        
         </tbody>
       </table>
+      <Routes>
+      <Route path={`/alumnoedit/${alumno.id}`} element={<EditAlumno />} />
+      </Routes>
     </div>
   </div>
 </div>
-   
+
   );
 }
 
