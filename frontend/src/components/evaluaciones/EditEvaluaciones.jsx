@@ -1,24 +1,39 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/evaluaciones'
-const CreateEmployee = () => {
+const endpoint = 'http://localhost:8000/api/evaluaciones/'
+
+const EditEvaluaciones = () => {
 
     const [descripcion, setDescripcion] = useState('')
     const [tipo_id, setTipoId] = useState('')
     const navigate = useNavigate()
+    const { id } = useParams()
 
-    const store = async (e) => {
+    const update = async (e) => {
         e.preventDefault();
-        await axios.post(endpoint, { descripcion: descripcion, tipo_id: tipo_id})
+        await axios.put(`${endpoint}${id}`, {
+            descripcion: descripcion,
+            tipo_id: tipo_id,
+        })
         navigate('/')
-
     }
+
+    useEffect(() => {
+
+        const getEvaluacionesById = async () => {
+            const response = await axios.get(`${endpoint}${id}`)
+            setDescripcion(response.data.descripcion)
+            setTipoId(response.data.tipo_id)
+        }
+        getEvaluacionesById()
+
+    }, [])
     return (
         <div>
-            <h2>Creat a new employee</h2>
-            <form onSubmit={store}>
+            <h2>Editar Evaluaciones</h2>
+            <form onSubmit={update}>
                 <div className='mb-3'>
                     <label className='form-label'>Descripcion</label>
                     <input
@@ -38,10 +53,10 @@ const CreateEmployee = () => {
                         className='form-control'
                     />
                 </div>
-                <button type='submit' className='btn btn-success'>Save</button>
+                <button type='submit' className='btn btn-success'>Update</button>
             </form>
         </div>
     )
 }
 
-export default CreateEmployee
+export default EditEvaluaciones
