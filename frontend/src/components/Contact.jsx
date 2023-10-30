@@ -2,20 +2,22 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="mt-20">
-        <p className="text-xl mb-4">Registra un alumno nuevo</p>
-        <p className="max-w-screen-sm h-14 text-sm p-2 rounded">
+    <div class="flex flex-col justify-center items-center">
+      <div class="mt-5">
+        <p class="text-xl mb-4">Registra un alumno nuevo</p>
+        <p class="max-w-screen-sm h-14 text-sm p-2 rounded">
           Bienvenido
           <br />
           Selecciona la accion que quieras realizar en las pestañas del menu de
           la izquierda
         </p>
       </div>
-      <div className="w-[50%] bg-blue-200  rounded-lg mt-9">
-        <h2 className="text-center fong-bold text-2xl">Añadir alumno</h2>
+
+      <div class="w-[50%] bg-blue-200  rounded-lg mt-9 shadow-lg">
+      <h2 class="text-center font-bold text-2xl font-roboto mb-4">Añadir alumno</h2>
+
         <form
-          action="/src/models/Create_Edit/CrearAlumno.php"
+          action="#"
           method="post"
           className="flex-col flex items-center"
         >
@@ -52,19 +54,43 @@ function Contact() {
               placeholder="apellidos"
             />
           </label>
-          <label className="block">
-            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+          <label class="block">
+            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+              correo
+            </span>
+            <input
+              type="email"
+              name="correo"
+              class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+              placeholder="apellidos"
+            />
+          </label>
+          <label class="block">
+            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
               Fecha de Nacimiento
             </span>
             <input
               type="date"
-              name="fecha"
-              className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+              name="fecha_nacimiento"
+              class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            />
+          </label>
+          <label>
+            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+              Grupo
+            </span>
+            <input
+              type="number"
+              min={"1"}
+              max={"5"}
+              name="grupo_id"
+              class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             />
           </label>
           <button
             type="submit"
-            className=" mt-10 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
+            class=" mt-5 mb-3 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded"
+
           >
             Guardar
           </button>
