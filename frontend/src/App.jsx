@@ -55,13 +55,13 @@ function App() {
             <hr />
             <li className="pb-5">
               <Link to="/tipos" className="text-white text-2xl">
-              <i class="fa-solid fa-building mr-3" />
+              <i className="fa-solid fa-building mr-3" />
                 <span className="m-3 hover:text-blue-400 ">Tipos</span>                
               </Link>
             </li>
             <li className="pb-5">
               <Link to="/tipocreate" className="text-white text-2xl">
-              <i class="fa-solid fa-building-user mr-3" />
+              <i className="fa-solid fa-building-user mr-3" />
                 <span className="m-3 hover:text-blue-400 ">Crear Tipo</span>                
               </Link>
             </li>
@@ -116,17 +116,17 @@ function App() {
             <Route path='/calificacioncreate' element={<CreateCalificacion />} />
             <Route path='/calificacionedit/:id' element={<EditCalificacion />} />
 
-            <Route path="/evaluaciones" element={<ShowEvaluaciones />} />
-            <Route path="/evaluacioncreate" element={<CreateEvaluacion />} />
-            <Route path="/evaluacionedit/:id" element={<EditEvaluacion />} />
+            <Route path='/evaluaciones' element={<ShowEvaluaciones />} />
+            <Route path='/evaluacioncreate' element={<CreateEvaluacion />} />
+            <Route path='/evaluacionedit/:id' element={<EditEvaluacion />} />
 
-            <Route path="/tipos" element={<ShowTipos />} />
-            <Route path="/tipocreate" element={<CreateTipo />} />
-            <Route path="/tipoedit/:id" element={<EditTipo />} />
+            <Route path='/tipos' element={<ShowTipos />} />
+            <Route path='/tipocreate' element={<CreateTipo />} />
+            <Route path='/tipoedit/:id' element={<EditTipo />} />
 
-            <Route path="/employees" element={<ShowEmployees />} />
-            <Route path="/employeecreate" element={<CreateEmployee />} />
-            <Route path="/employeeedit/:id" element={<EditEmployee />} />
+            <Route path='/employees' element={<ShowEmployees />} />
+            <Route path='/employeecreate' element={<CreateEmployee />} />
+            <Route path='/employeeedit/:id' element={<EditEmployee />} />
           </Routes>
         </div>
       </div>
