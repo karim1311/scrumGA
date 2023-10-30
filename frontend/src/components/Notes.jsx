@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import RegistroCali from "./components/RegistroCali"
 
 export default function Notes() {
   const [notas, setNotas] = useState([]);
@@ -28,7 +30,7 @@ export default function Notes() {
                 <th className="p-3 text-left" >NOMBRE</th>
                 <th className="p-3 text-left" >EVALUACIÓN</th>
                 <th className="p-3 text-left" >NOTA</th>
-                <th className="p-3 text-left text-center" >MENSAJE</th>
+                <th className="p-3 text-center">MENSAJE</th>
                 <th className="p-3 text-left" >Accion</th>
             </tr>
 
@@ -42,6 +44,9 @@ export default function Notes() {
               <td className="p-3">{nota.nota}</td>
               <td className="p-3">{nota.mensaje}</td>
               <td className="p-3">
+              <Link to={`/alumnoedit/${alumno.id}`} className="mr-3">
+                      <i className="fa-solid fa-pencil text-green-700" />
+                    </Link>
                 <button onClick={() => handleDeleteNota(nota.id)}>
                 <i class="fa-solid fa-trash-can text-red-700"/>
                 </button>
@@ -50,6 +55,9 @@ export default function Notes() {
           ))}
         </tbody>
       </table>
+      <Routes>
+            <Route path={`/alumnoedit/${alumno.id}`} element={<EditAlumno />} />
+          </Routes>
     </div>
   );
 }

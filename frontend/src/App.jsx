@@ -37,7 +37,7 @@ function App() {
             <p>[name Admin]</p>
           </div>
 
-          <ul className='pl-5 pt-40'>
+          <ul className='pl-5 pt-20'>
             <li className='pb-5 bg-'>
               <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16  hover:text-blue-400'>Inicio</span>
                 <i className="fa-solid fa-chalkboard-user" /></Link>
