@@ -1,34 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
+import Home from './components/home';
+import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+    <div className="d-flex">
+      <nav  className="flex-1 bg-blue-700 h-screen" >
+        <div className='text-white pb-15 text-2xl text-center pt-10'>
+          <h2>Admin</h2>
+          <p>[name Admin]</p>
+        </div>
+      
+        <ul className='pl-5 pt-40'>
+          <li className='pb-5'>
+            <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16'>Inico</span>
+            <i class="fa-solid fa-chalkboard-user"/></Link>
+            
+          </li>
+          <li className='pb-5'>
+            <Link to="/About/1" className='text-white text-2xl'><span className='m-3'>Lista de Alumnos</span>
+            <i class="fa-solid fa-graduation-cap"/></Link> 
+          </li>
+          <li className='pb-5'>
+            <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3'>Registro  Alumno</span>
+            <i class="fa-solid fa-chalkboard"/></Link>
+          </li>
+        </ul>
+      </nav>
+      
+      <div className="flex-2">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About/:id" element={<About />} />
+          <Route path="/Contact/:id" element={<Contact />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+  </Router>
   )
 }
 

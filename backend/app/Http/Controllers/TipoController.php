@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tipo;
+use Exception;
 use Illuminate\Http\Request;
 
 class TipoController extends Controller
@@ -28,20 +29,31 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
+        try {
+            $validated = $request->validate([
+            'descripcion' => 'required|string|min:2|max:255',
+            'porcentaje' => 'required|numeric|min:1|max:100',
+            'rango' => 'required|numeric|min:1|max:100',
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()],422);
+        }
+
         $tipo = new Tipo();
         $tipo->descripcion = $request->descripcion;
         $tipo->porcentaje = $request->porcentaje;
         $tipo->rango = $request->rango;
         $tipo->save();
-        return "Tipo guardado correctamente";
+        return response()->json("Tipo guardado correctamente");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Tipo $tipo)
+    public function show(string $id)
     {
-        //
+        $tipo = Tipo::find($id);
+        return response()->json($tipo);
     }
 
     /**
@@ -55,16 +67,24 @@ class TipoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tipo $tipo)
+    public function update(Request $request, string $id)
     {
-        //
+        $tipos = Tipo::all();
+        $tipo = $tipos->find($id);
+        $tipo->descripcion = $request->descripcion;
+        $tipo->porcentaje = $request->porcentaje;
+        $tipo->rango = $request->rango;
+        $tipo->save();
+        return $tipo;
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tipo $tipo)
+    public function destroy(string $id)
     {
-        //
+        $tipo = Tipo::find($id);
+        $tipo->delete();
+        return "Tipo eliminado correctamente";
     }
 }

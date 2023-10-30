@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use Exception;
 use Illuminate\Http\Request;
 
 class AlumnoController extends Controller
@@ -28,30 +29,28 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
+        try {
+            $validated = $request->validate([
+            'dni' => 'required|string|min:1|max:20',
+            'nombre' => 'required|string|min:2|max:100',
+            'apellido' => 'required|string|min:2|max:100',
+            'correo' => 'required|string|email|max:100',
+            'fecha_nacimiento' => 'required|max:20',
+            'grupo_id' => 'required|numeric|min:1|max:4'
+            ]);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()],422);
+        }
+
         $alumno = new Alumno();
         $alumno->dni = $request->dni;
         $alumno->nombre = $request->nombre;
         $alumno->apellido = $request->apellido;
+        $alumno->correo = $request->correo;
         $alumno->fecha_nacimiento = $request->fecha_nacimiento;
         $alumno->grupo_id = $request->grupo_id;
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'grupo_id' => 'required|numeric|min:1|max:4',
-        ]);
-
-
-        $messages = [
-            'grupo_id.required' => 'El campo Grupo ID es obligatorio.',
-            'grupo_id.numeric' => 'El campo Grupo ID debe ser numérico.',
-            'grupo_id.between' => 'El campo Grupo ID debe estar entre 1 y 4.',
-
-        ];
-
-
-        $request->validate( $messages);
-
         $alumno->save();
-        return "Alumno guardado correctamente";
+        return response()->json("Alumno guardado correctamente");
     }
 
     /**
@@ -74,16 +73,9 @@ class AlumnoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Alumno $alumno)
     {
-        $alumno = Alumno::find($id);
-        $alumno->dni = $request->input('dni');
-        $alumno->nombre = $request->input('nombre'); // Actualizar otros campos$alumno->save();
-        $alumno->apellido = $request->input('apellido');
-        $alumno->fecha_nacimiento = $request->input('fecha_nacimiento');
-        $alumno->grupo_id = $request->input('grupo_id');
-        $alumno->save();
-        return response()->json($alumno);
+        //
     }
 
     /**

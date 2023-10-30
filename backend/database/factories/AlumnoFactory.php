@@ -17,9 +17,10 @@ class AlumnoFactory extends Factory
     public function definition(): array
     {
         return [
-            'dni' => fake()->randomDigit(10, true),
+            'dni' => fake()->randomNumber(8, true),
             'nombre' =>fake()->firstName(),
             'apellido' =>fake()->lastName(),
+            'correo' =>fake()->email(),
             'fecha_nacimiento' =>fake()->date(),
             'grupo_id' =>fake()->numberBetween(1,4),
         ];

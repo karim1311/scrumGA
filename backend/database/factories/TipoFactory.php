@@ -18,8 +18,8 @@ class TipoFactory extends Factory
     {
         return [
             'descripcion'=>fake()->sentence(),
-            'porcentaje'=>fake()->randomElement(['15','20','30']),
-            'rango'=>fake()->randomElement(['10','20','30']),
+            'porcentaje'=>fake()->randomElement(['10','30','40']),
+            'rango'=>fake()->randomElement(['60','80','100']),
         ];
     }
 }
