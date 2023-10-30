@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api/alumno/";
@@ -40,22 +40,22 @@ const EditAlumno = () => {
     getAlumnoById();
   }, []);
   return (
-    <div class="flex flex-col justify-center items-center">
-      <div class="mt-5">
-        <p class="text-xl mb-4">Edita al alumno </p>
-        <p class="max-w-screen-sm h-14 text-sm p-2 rounded">
+    <div className="flex flex-col justify-center items-center">
+      <div className="mt-5">
+        <p className="text-xl mb-4">Edita al alumno </p>
+        <p className="max-w-screen-sm h-14 text-sm p-2 rounded">
           Bienvenido
           <br />
           Selecciona la accion que quieras realizar en las pestañas del menu de
           la izquierda
         </p>
       </div>
-      <div class="w-[50%] bg-blue-200  rounded-lg mt-9 shadow-lg">
-        <h2 class="text-center font-bold text-2xl font-roboto mb-4">Editando alumno</h2>
+      <div className="w-[50%] bg-blue-200  rounded-lg mt-9 shadow-lg">
+        <h2 className="text-center font-bold text-2xl font-roboto mb-4">Editando alumno</h2>
         <form onSubmit={update} className="flex-col flex items-center">
           <div className="mb-3 block">
             <label className="form-label">
-              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                 DNI
               </span>
             </label>
@@ -69,7 +69,7 @@ const EditAlumno = () => {
 
           <div className="mb-3">
             <label className="block">
-              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                 Nombre
               </span>
             </label>
@@ -98,7 +98,7 @@ const EditAlumno = () => {
 
               <div className="mb-3">
                 <label className="form-label">
-                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                     Apellido
                   </span>
                 </label>
@@ -114,7 +114,7 @@ const EditAlumno = () => {
 
               <div className="mb-3">
                 <label className="form-label">
-                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                     correo
                   </span>
                 </label>
@@ -129,7 +129,7 @@ const EditAlumno = () => {
 
               <div className="mb-3">
                 <label className="form-label">
-                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                     Fecha de Nacimiento
                   </span>
                 </label>
@@ -144,7 +144,7 @@ const EditAlumno = () => {
 
               <div className="mb-3">
                 <label className="form-label">
-                  <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                     Grupo
                   </span>
                 </label>
@@ -160,7 +160,7 @@ const EditAlumno = () => {
                 />
               </div>
 
-              <button type="submit" class=" mt-5 mb-3 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">
+              <button type="submit" className=" mt-5 mb-3 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">
                 Actualizar
               </button>
             </form>

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/evaluaciones/'
+const endpoint = 'http://localhost:8000/api/evaluacion/'
 
 const EditEvaluaciones = () => {
 
