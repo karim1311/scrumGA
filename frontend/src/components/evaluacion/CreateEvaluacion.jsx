@@ -7,11 +7,12 @@ const CreateEvaluacion = () => {
 
     const [descripcion, setDescripcion] = useState('')
     const [tipo_id, setTipoId] = useState('')
+    const [fecha, setFecha] = useState('')
     const navigate = useNavigate()
 
     const store = async (e) => {
         e.preventDefault();
-        await axios.post(endpoint, { descripcion: descripcion, tipo_id: tipo_id})
+        await axios.post(endpoint, { descripcion: descripcion, tipo_id: tipo_id, fecha: fecha})
         navigate('/')
     }
     return (
@@ -29,10 +30,20 @@ const CreateEvaluacion = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'>Tipo</label>
+                    <label className='form-label'>Tipo ID</label>
                     <input
                         value={tipo_id}
                         onChange={(e) => setTipoId(e.target.value)}
+                        type='text'
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Fecha de evaluación</label>
+                    <input
+                        value={fecha}
+                        onChange={(e) => setFecha(e.target.value)}
                         type='text'
                         className='form-control'
                     />
