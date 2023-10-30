@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Notes from "./components/Notes";
-import RegistroCali from "./components/RegistroCali";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+// import Notes from "./components/Notes";
+// import RegistroCali from "./components/RegistroCali";
 
 import CreateEmployees from "./components/employee/CreateEmployee";
 import EditEmployees from "./components/employee/EditEmployee";
@@ -43,66 +43,27 @@ function App() {
                 <i className="fa-solid fa-chalkboard-user" /></Link>
             </li>
             <li className='pb-5'>
-              <Link to="/About/1" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
+              <Link to="/alumnos" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
                 <i className="fa-solid fa-graduation-cap" /></Link>
             </li>
             <li className='pb-5'>
 
-            <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registro  Alumno</span>
-            <i className="fa-solid fa-user-pen"></i></Link>
-          </li>
-          <li className='pb-5'>
-            <Link to="/calificaciones" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Calificaciones</span>
-            <i className="fa-solid fa-chalkboard"/></Link>
-          </li>
-          <li className='pb-5'>
-            <Link to="/RegistroCali/4" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registro Calificación</span>
-            <i className="fa-solid fa-pen-to-square"></i></Link>
-          </li>
-          
-          <hr />
-          <li className='pb-5'>
-            <Link to="/employees" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Empleados</span>
-            <i className="fa-solid fa-chalkboard"/></Link>
-          </li>
-          <li className='pb-5'>
-            <Link to="/employeecreate" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Crear empleado</span>
-            <i className="fa-solid fa-chalkboard"/></Link>
-          </li>
+              <Link to="/alumnocreate" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registrar  Alumno</span>
+                <i className="fa-solid fa-user-pen"></i></Link>
+            </li>
+            <li className='pb-5'>
+              <Link to="/calificaciones" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Calificaciones</span>
+                <i className="fa-solid fa-chalkboard" /></Link>
+            </li>
+            <li className='pb-5'>
+              <Link to="/calificacionescreate" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registrar Calificación</span>
+                <i className="fa-solid fa-pen-to-square"></i></Link>
+            </li>
 
-          
-            <li className="pb-5 bg-">
-              <Link to="/" className="text-white pb-15 text-2xl">
-              <i class="fa-solid fa-chalkboard-user mr-3" />
-                <span className="m-3 mr-16  hover:text-blue-400">Inicio</span>
-              </Link>
-            </li>
-            <hr className="mb-2"/>
-            <li className="pb-5">
-              <Link to="/About/1" className="text-white text-2xl">
-              <i class="fa-solid fa-graduation-cap mr-3" />
-                <span className="m-3  hover:text-blue-400">
-                  Lista de Alumnos
-                </span>
-                
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/Contact/2" className="text-white text-2xl">
-              <i class="fa-solid fa-user-pen mr-3"/>
-                <span className="m-3  hover:text-blue-400">
-                  Registrar Alumno
-                </span>
-                
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/Notes/3" className="text-white text-2xl">
-              <i class="fa-solid fa-chalkboard mr-3"/>
-                <span className="m-3  hover:text-blue-400">Calificaciones</span>
-
-                
-              </Link>
+            <hr />
+            <li className='pb-5'>
+              <Link to="/evaluaciones" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Evaluaciones</span>
+                <i className="fa-solid fa-chalkboard" /></Link>
             </li>
             <li className="pb-5">
               <Link to="/RegistroCali/4" className="text-white text-2xl">
@@ -164,11 +125,11 @@ function App() {
         <div className="flex-2">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/About/:id" element={<About />} />
+            {/* <Route path="/About/:id" element={<About />} />
             <Route path="/Contact/:id" element={<Contact />} />
 
             <Route path="/Notes/:id" element={<Notes />} />
-            <Route path="/RegistroCali/:id" element={<RegistroCali />} />
+            <Route path="/RegistroCali/:id" element={<RegistroCali />} /> */}
 
 
             <Route path='/alumnos' element={<ShowAlumnos />} />
