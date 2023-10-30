@@ -4,6 +4,9 @@ import './App.css'
 import Home from './components/home';
 import About from './components/About';
 import Contact from './components/Contact';
+import ListarEvaluaciones from './components/ListarEvaluaciones';
+import RegistrarEvaluacion from './components/RegistrarEvaluacion';
+import RegistrarTipoEvaluacion from './components/RegistrarTipoEvaluacion';
 
 function App() {
 
@@ -30,6 +33,19 @@ function App() {
             <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3'>Registro  Alumno</span>
             <i className="fa-solid fa-chalkboard"/></Link>
           </li>
+          <li className='pb-5'>
+            <Link to="/ListarEvaluaciones/3" className='text-white text-2xl'><span className='m-3'>Listar Evaluaciones</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+          <li className='pb-5'>
+            <Link to="/RegistrarEvaluacion/4" className='text-white text-2xl'><span className='m-3'>Registrar Evaluacion</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+          <li className='pb-5'>
+            <Link to="/RegistrarTipoEvaluacion/5" className='text-white text-2xl'><span className='m-3'>Registrar Tipo de Evaluacion</span>
+            <i className="fa-solid fa-chalkboard"/></Link>
+          </li>
+
         </ul>
       </nav>
       
@@ -38,6 +54,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/About/:id" element={<About />} />
           <Route path="/Contact/:id" element={<Contact />} />
+          <Route path="/ListarEvaluaciones/:id" element={<ListarEvaluaciones />} />
+          <Route path="/RegistrarEvaluacion/:id" element={<RegistrarEvaluacion />} />
+          <Route path="/RegistrarTipoEvaluacion/:id" element={<RegistrarTipoEvaluacion />} />
+          
         </Routes>
       </div>
     </div>
