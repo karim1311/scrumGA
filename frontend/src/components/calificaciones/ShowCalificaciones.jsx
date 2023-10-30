@@ -3,22 +3,22 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 const endpoint = 'http://localhost:8000/api'
-const ShowEmployees = () => {
+const ShowCalificaciones = () => {
 
-    const [employees, setEmployees] = useState([])
+    const [calificaciones, setCalificaciones] = useState([])
     useEffect(() => {
-        getAllEmployees()
+        getAllCalificaciones()
     }, [])
 
-    const getAllEmployees = async () => {
-        const response = await axios.get(`${endpoint}/employees`)
-        setEmployees(response.data)
+    const getAllCalificaciones = async () => {
+        const response = await axios.get(`${endpoint}/calificaciones`)
+        setCalificaciones(response.data)
     }
 
-    const deleteEmployee = async (id) => {
+    const deleteCalicacion = async (id) => {
 
-        await axios.delete(`${endpoint}/employee/${id}`)
-        getAllEmployees()
+        await axios.delete(`${endpoint}/calificaciones/${id}`)
+        getAllCalificaciones()
 
     }
     return (
@@ -29,27 +29,20 @@ const ShowEmployees = () => {
             <table className='table table-striped'>
                 <thead className='bg-primary text-white'>
                     <tr>
-                        <th>Name</th>
-                        <th>Last Name</th>
-                        <th>Job</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Age</th>
-                        <th>Action</th>
+                        <th>Alumno Id</th>
+                        <th>Evaluación Id</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {employees.map((employee) => (
-                        <tr key={employee.id}>
-                            <td>{employee.name}</td>
-                            <td>{employee.last_name}</td>
-                            <td>{employee.job}</td>
-                            <td>{employee.phone}</td>
-                            <td>{employee.address}</td>
-                            <td>{employee.age}</td>
+                    {calificaciones.map((calificaciones) => (
+                        <tr key={calificaciones.id}>
+                            <td>{calificaciones.alumno_id}</td>
+                            <td>{calificaciones.evaluacion_id}</td>
+                            <td>{calificaciones.nota}</td>
+                            <td>{calificaciones.mensaje}</td>
                             <td>
-                                <Link to={`/employeeedit/${employee.id}`} className='btn btn-info'>Edit</Link>
-                                <button onClick={() => deleteEmployee(employee.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/calificacionedit/${calificaciones.id}`} className='btn btn-info'>Edit</Link>
+                                <button onClick={() => deleteCalicacion(calificaciones.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     ))}
@@ -59,4 +52,4 @@ const ShowEmployees = () => {
     )
 }
 
-export default ShowEmployees
+export default ShowCalificaciones

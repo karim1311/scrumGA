@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api/calificaciones";
+
 const CreateCalificaciones = () => {
     const [alumno_id, setAlumnoId] = useState("");
     const [evaluacion_id, setEvaluacionId] = useState("");
