@@ -6,6 +6,10 @@ import Contact from "./components/Contact";
 import Notes from "./components/Notes";
 import RegistroCali from "./components/RegistroCali";
 
+import CreateEmployees from "./components/employee/CreateEmployee";
+import EditEmployees from "./components/employee/EditEmployee";
+import ShowEmployees from "./components/employee/ShowEmployees";
+
 import CreateAlumno from "./components/alumno/CreateAlumno";
 import EditAlumno from "./components/alumno/EditAlumno";
 import ShowAlumnos from "./components/alumno/ShowAlumnos";
@@ -65,6 +69,15 @@ function App() {
               <Link to="/evaluacionescreate" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Registrar Evaluaciones</span>
                 <i className="fa-solid fa-chalkboard" /></Link>
             </li>
+            
+            <li className='pb-5'>
+              <Link to="/employees" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Empleados</span>
+                <i className="fa-solid fa-chalkboard" /></Link>
+            </li>
+            <li className='pb-5'>
+              <Link to="/employeescreate" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Registrar Empleados</span>
+                <i className="fa-solid fa-chalkboard" /></Link>
+            </li>
             {/* esto de abajo ya esta implementado arriba */}
             <hr />
             <li className="pb-5">
@@ -110,6 +123,10 @@ function App() {
             <Route path="/tipos" element={<ShowTipos />} />
             <Route path="/tiposcreate" element={<CreateTipos />} />
             <Route path="/tiposedit/:id" element={<EditTipos />} />
+
+            <Route path="/employees" element={<ShowEmployees />} />
+            <Route path="/employeescreate" element={<CreateEmployees />} />
+            <Route path="/employeeedit/:id" element={<EditEmployees />} />
           </Routes>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import EditAlumno from "./alumno/EditAlumno";
 
@@ -35,37 +35,37 @@ export default function Alumnos() {
   };
 
   const handleEditAlumno = (event) => {
-<Link>
-</Link>
+    <Link>
+    </Link>
   }
   //console.log(alumno);
   //console.log(resultadosFiltrados);
   return (
-    <div class="flex items-center justify-center min-h-screen bg-white">
-  <div class="col-span-12">
-    <div class="overflow-auto lg:overflow-visible">
-      <div class="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
-        <h2 class="text-2xl text-gray-500 font-bold">Todos los Alumnos</h2>
-        <div className="text-center flex-auto">
-        <input
-          type="text"
-          name="busca"
-          placeholder="Search..."
-          className="
+    <div className="flex items-center justify-center min-h-screen bg-white">
+      <div className="col-span-12">
+        <div className="overflow-auto lg:overflow-visible">
+          <div className="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
+            <h2 className="text-2xl text-gray-500 font-bold">Todos los Alumnos</h2>
+            <div className="text-center flex-auto">
+              <input
+                type="text"
+                name="busca"
+                placeholder="Search..."
+                className="
             w-1/3
             py-2
             border-b-2 border-blue-600
             outline-none
             focus:border-yellow-400
           "
-          value={busqueda}
-          onChange={handleInputChange}
-        />
-      </div>
-      </div>
-      <table class="table text-gray-400 border-separate space-y-6 text-sm">
-        <thead class="bg-blue-500 text-white">
-          <tr className="tra">
+                value={busqueda}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <table className="table text-gray-400 border-separate space-y-6 text-sm">
+            <thead className="bg-blue-500 text-white">
+              <tr className="tra">
                 <th className="p-3">ID</th>
                 <th className="p-3">DNI</th>
                 <th className="p-3 text-left">NOMBRE</th>
@@ -74,38 +74,37 @@ export default function Alumnos() {
                 <th className="p-3 text-left">FECHA DE NACIMIENTO</th>
                 <th className="p-3 text-left">GRUPO</th>
                 <th className="p-3 text-left">ACCIÓN</th>
-           </tr>
-        </thead>
-        <tbody>
-        {resultadosFiltrados.map((alumno) => (
-            <tr key={alumno.id} className="bg-blue-200 lg:text-black text-center tra">
-              <td className="p-3 font-extrabold"  >{alumno.id}</td>
-              <td className="p-3"  >{alumno.dni}</td>
-              <td className="p-3 font-medium capitalize">{alumno.nombre}</td>
-              <td className="p-3 font-medium capitalize">{alumno.apellido}</td>
-              <td className="p-3"  >{alumno.correo}</td> 
-              <td className="p-3"  >{alumno.fecha_nacimiento}</td>
-              <td className="p-3"  >{alumno.grupo_id}</td>
-              <td className="p-3"  >
-                <Link to={`/alumnoedit/${alumno.id}`} className="mr-3">
-                <i class="fa-solid fa-pencil text-green-700"/>
-                </Link>
-                <button className="ml-3" onClick={() => handleDeleteAlumno(alumno.id)}>
-                <i class="fa-solid fa-trash-can text-red-700"/>
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <Routes>
-      <Route path={`/alumnoedit/${alumno.id}`} element={<EditAlumno />} />
-      </Routes>
+              </tr>
+            </thead>
+            <tbody>
+              {resultadosFiltrados.map((alumno) => (
+                <tr key={alumno.id} className="bg-blue-200 lg:text-black text-center tra">
+                  <td className="p-3 font-extrabold"  >{alumno.id}</td>
+                  <td className="p-3"  >{alumno.dni}</td>
+                  <td className="p-3 font-medium capitalize">{alumno.nombre}</td>
+                  <td className="p-3 font-medium capitalize">{alumno.apellido}</td>
+                  <td className="p-3"  >{alumno.correo}</td>
+                  <td className="p-3"  >{alumno.fecha_nacimiento}</td>
+                  <td className="p-3"  >{alumno.grupo_id}</td>
+                  <td className="p-3"  >
+                    <Link to={`/alumnoedit/${alumno.id}`} className="mr-3">
+                      <i className="fa-solid fa-pencil text-green-700" />
+                    </Link>
+                    <button className="ml-3" onClick={() => handleDeleteAlumno(alumno.id)}>
+                      <i className="fa-solid fa-trash-can text-red-700" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <Routes>
+            <Route path={`/alumnoedit/${alumno.id}`} element={<EditAlumno />} />
+          </Routes>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
   );
 }
 
- 
