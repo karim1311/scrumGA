@@ -82,6 +82,20 @@ const EditAlumno = () => {
           />
         </div>
 
+       
+    <div>
+        <h2>Editar Alumno</h2>
+        <form onSubmit={update}>
+            <div className='mb-3'>
+                <label className='form-label'>DNI</label>
+                <input 
+                    value={dni} 
+                    onChange={ (e)=> setDni(e.target.value)}
+                    type='text'
+                    className='form-control'
+                />
+            </div>
+
         <div className="mb-3">
           <label className="form-label">
           <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
@@ -96,6 +110,7 @@ const EditAlumno = () => {
               
           />
         </div>
+
 
         <div className="mb-3">
           <label className="form-label">
