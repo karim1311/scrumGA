@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+
+
 
 function ListarEvaluaciones() {
   const [evaluaciones, setEvaluaciones] = useState([]);
@@ -14,6 +17,11 @@ function ListarEvaluaciones() {
         console.error('Error al cargar los datos de las evaluaciones:', error);
       });
   }, []);
+
+  const handleBorrar = (id) => {
+    // Implementa la lógica para borrar la evaluación con el ID proporcionado.
+    console.log('Borrar evaluación con ID:', id);
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -34,15 +42,12 @@ function ListarEvaluaciones() {
               <td className="border p-2">{evaluacion.descripcion}</td>
               <td className="border p-2">{evaluacion.fecha}</td>
               <td className="border p-2">
-                <button
-                  onClick={() => handleEditar(evaluacion.id)}
-                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                >
+                <Link to={`/EditarEvaluacion/${evaluacion.id}`} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                   Editar
-                </button>
+                </Link>
                 <button
                   onClick={() => handleBorrar(evaluacion.id)}
-                  className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                  className="px-4 py-2 bg-red-500 text-white rounded hover-bg-red-600"
                 >
                   Borrar
                 </button>
@@ -51,18 +56,11 @@ function ListarEvaluaciones() {
           ))}
         </tbody>
       </table>
+
+
+      
     </div>
   );
-
-  const handleEditar = (id) => {
-    // Implementa la lógica para editar la evaluación con el ID proporcionado.
-    console.log('Editar evaluación con ID:', id);
-  };
-
-  const handleBorrar = (id) => {
-    // Implementa la lógica para borrar la evaluación con el ID proporcionado.
-    console.log('Borrar evaluación con ID:', id);
-  };
 }
 
 export default ListarEvaluaciones;

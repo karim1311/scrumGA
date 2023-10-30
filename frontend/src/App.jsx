@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import ListarEvaluaciones from './components/ListarEvaluaciones';
 import RegistrarEvaluacion from './components/RegistrarEvaluacion';
 import RegistrarTipoEvaluacion from './components/RegistrarTipoEvaluacion';
+import EditarEvaluacion from './components/EditarEvaluacion';
 
 function App() {
 
@@ -57,6 +58,8 @@ function App() {
           <Route path="/ListarEvaluaciones/:id" element={<ListarEvaluaciones />} />
           <Route path="/RegistrarEvaluacion/:id" element={<RegistrarEvaluacion />} />
           <Route path="/RegistrarTipoEvaluacion/:id" element={<RegistrarTipoEvaluacion />} />
+          <Route path="/EditarEvaluacion/:id" element={<EditarEvaluacion />} />
+
           
         </Routes>
       </div>
