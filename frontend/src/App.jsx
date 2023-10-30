@@ -23,15 +23,7 @@ import ShowAlumnos from './components/alumno/ShowAlumnos';
 
 function App() {
   return (
-    <Router>
-      <div className="d-flex">
-        <nav className=" flex-1 bg-blue-900 drop-shadow-2xl rounded-lg">
-          <div className="text-white pb-15 text-2xl text-center pt-10">
-            <h2>Admin</h2>
-            <p>[name Admin]</p>
-          </div>
-
-
+    
     <Router>      
     <div className="d-flex">
       <nav  className="flex-1 bg-blue-900 h-screen drop-shadow-2xl rounded-lg" >
@@ -75,82 +67,29 @@ function App() {
           </li>
 
           
-            <li className="pb-5 bg-">
-              <Link to="/" className="text-white pb-15 text-2xl">
-              <i class="fa-solid fa-chalkboard-user mr-3" />
-                <span className="m-3 mr-16  hover:text-blue-400">Inicio</span>
-              </Link>
-            </li>
-            <hr className="mb-2"/>
-            <li className="pb-5">
-              <Link to="/About/1" className="text-white text-2xl">
-              <i class="fa-solid fa-graduation-cap mr-3" />
-                <span className="m-3  hover:text-blue-400">
-                  Lista de Alumnos
-                </span>
+            
                 
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/Contact/2" className="text-white text-2xl">
-              <i class="fa-solid fa-user-pen mr-3"/>
-                <span className="m-3  hover:text-blue-400">
-                  Registrar Alumno
-                </span>
-                
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/Notes/3" className="text-white text-2xl">
-              <i class="fa-solid fa-chalkboard mr-3"/>
-                <span className="m-3  hover:text-blue-400">Calificaciones</span>
-
-                
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/RegistroCali/4" className="text-white text-2xl">
-              <i class="fa-solid fa-pen-to-square mr-3"></i>
-                <span className="m-3  hover:text-blue-400">
-                  Registrar Calificación
-                </span>
-                
-              </Link>
-            </li>
+            
 
 
-            <hr className="mb-2"/>
-            <li className="pb-5">
-              <Link to="/employees" className="text-white text-2xl">
-              <i class="fa-solid fa-building mr-3" />
-                <span className="m-3 hover:text-blue-400 ">Empleados</span>
-                
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/employeecreate" className="text-white text-2xl">
-              <i class="fa-solid fa-building-user mr-3" />
-                <span className="m-3 hover:text-blue-400 ">Crear empleado</span>
-                
-              </Link>
-            </li>
+            
 
                               {/* esto de abajo ya esta implementado arriba */}
-           {/*  <hr /> 
+          <hr />
             <li className="pb-5">
               <Link to="/alumnos" className="text-white text-2xl">
-              <i class="fa-solid fa-graduation-cap mr-3" />
+              <i className="fa-solid fa-graduation-cap mr-3" />
                 <span className="m-3">Alumnos</span>
                 
               </Link>
             </li>
             <li className="pb-5">
               <Link to="/alumnocreate" className="text-white text-2xl">
-              <i class="fa-solid fa-user-pen mr-3"></i>
+              <i className="fa-solid fa-user-pen mr-3"></i>
                 <span className="m-3">Registrar Alumno</span>
                 
               </Link>
-            </li> */}
+            </li> 
          
           </ul>
         </nav>
