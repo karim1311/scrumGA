@@ -2,12 +2,11 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/tipos'
-const CreateTipos
-    = () => {
+const endpoint = 'http://localhost:8000/api/tipo'
+const CreateTipo = () => {
 
         const [descripcion, setDescripcion] = useState('')
-        const [porcentaje, setPorsentaje] = useState('')
+        const [porcentaje, setPorcentaje] = useState('')
         const [rango, setRango] = useState('')
         const navigate = useNavigate()
 
@@ -34,7 +33,7 @@ const CreateTipos
                         <label className='form-label'>Porcentaje</label>
                         <input
                             value={porcentaje}
-                            onChange={(e) => setPorsentaje(e.target.value)}
+                            onChange={(e) => setPorcentaje(e.target.value)}
                             type='text'
                             className='form-control'
                         />
@@ -54,4 +53,4 @@ const CreateTipos
         )
     }
 
-export default CreateTipos
+export default CreateTipo
