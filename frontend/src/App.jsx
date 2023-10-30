@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Notes from "./components/Notes";
-import RegistroCali from "./components/RegistroCali";
+// import About from "./components/About";
+// import Contact from "./components/Contact";
+// import Notes from "./components/Notes";
+// import RegistroCali from "./components/RegistroCali";
 
 import CreateEmployees from "./components/employee/CreateEmployee";
 import EditEmployees from "./components/employee/EditEmployee";
@@ -43,12 +43,12 @@ function App() {
                 <i className="fa-solid fa-chalkboard-user" /></Link>
             </li>
             <li className='pb-5'>
-              <Link to="/About/1" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
+              <Link to="/alumnos" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
                 <i className="fa-solid fa-graduation-cap" /></Link>
             </li>
             <li className='pb-5'>
 
-              <Link to="/Contact/2" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registrar  Alumno</span>
+              <Link to="/alumnocreate" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registrar  Alumno</span>
                 <i className="fa-solid fa-user-pen"></i></Link>
             </li>
             <li className='pb-5'>
@@ -101,11 +101,11 @@ function App() {
         <div className="flex-2">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/About/:id" element={<About />} />
+            {/* <Route path="/About/:id" element={<About />} />
             <Route path="/Contact/:id" element={<Contact />} />
 
             <Route path="/Notes/:id" element={<Notes />} />
-            <Route path="/RegistroCali/:id" element={<RegistroCali />} />
+            <Route path="/RegistroCali/:id" element={<RegistroCali />} /> */}
 
 
             <Route path='/alumnos' element={<ShowAlumnos />} />

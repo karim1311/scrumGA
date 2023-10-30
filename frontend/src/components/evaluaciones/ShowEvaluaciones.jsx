@@ -17,7 +17,7 @@ const ShowEvaluaciones = () => {
 
     const deleteEvaluaciones = async (id) => {
 
-        await axios.delete(`${endpoint}/evaluaciones/${id}`)
+        await axios.delete(`${endpoint}/evaluacion/${id}`)
         getAllEvaluaciones()
 
     }
@@ -39,7 +39,7 @@ const ShowEvaluaciones = () => {
                             <td>{evaluaciones.descripcion}</td>
                             <td>{evaluaciones.tipo_id}</td>
                             <td>
-                                <Link to={`/employeeedit/${evaluaciones.id}`} className='btn btn-info'>Edit</Link>
+                                <Link to={`/evaluacionedit/${evaluaciones.id}`} className='btn btn-info'>Edit</Link>
                                 <button onClick={() => deleteEvaluaciones(evaluaciones.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
