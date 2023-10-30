@@ -17,7 +17,7 @@ const ShowTipos = () => {
 
     const deleteTipo = async (id) => {
 
-        await axios.delete(`${endpoint}/tipos/${id}`)
+        await axios.delete(`${endpoint}/tipo/${id}`)
         getAllTipos()
 
     }

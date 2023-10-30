@@ -8,6 +8,7 @@ const EditEvaluacion = () => {
 
     const [descripcion, setDescripcion] = useState('')
     const [tipo_id, setTipoId] = useState('')
+    const [fecha, setFecha] = useState('')
     const navigate = useNavigate()
     const { id } = useParams()
 
@@ -15,7 +16,8 @@ const EditEvaluacion = () => {
         e.preventDefault();
         await axios.put(`${endpoint}${id}`, {
             descripcion: descripcion,
-            tipo_id: tipo_id
+            tipo_id: tipo_id, 
+            fecha: fecha
         })
         navigate('/')
     }
@@ -24,8 +26,10 @@ const EditEvaluacion = () => {
 
         const getEvaluacionById = async () => {
             const response = await axios.get(`${endpoint}${id}`)
+            console.log(response);
             setDescripcion(response.data.descripcion)
             setTipoId(response.data.tipo_id)
+            setFecha(response.data.fecha)
         }
         getEvaluacionById()
 
@@ -49,6 +53,16 @@ const EditEvaluacion = () => {
                     <input
                         value={tipo_id}
                         onChange={(e) => setTipoId(e.target.value)}
+                        type='text'
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Fecha</label>
+                    <input
+                        value={fecha}
+                        onChange={(e) => setFecha(e.target.value)}
                         type='text'
                         className='form-control'
                     />
