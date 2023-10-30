@@ -1,16 +1,16 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const endpoint = "http://localhost:8000/api/calificacion/";
+const endpoint = 'http://localhost:8000/api/calificacion/'
 
 const EditCalificacion = () => {
-    const [alumno_id, setAlumnoId] = useState("");
-    const [evaluacion_id, setEvaluacionId] = useState("");
-    const [nota, setNota] = useState("");
-    const [mensaje, setMensaje] = useState("");
-    const navigate = useNavigate();
-    const { id } = useParams();
+    const [alumno_id, setAlumnoId] = useState()
+    const [evaluacion_id, setEvaluacionId] = useState()
+    const [nota, setNota] = useState()
+    const [mensaje, setMensaje] = useState()
+    const navigate = useNavigate()
+    const { id } = useParams()
 
     const update = async (e) => {
         e.preventDefault();
@@ -18,71 +18,73 @@ const EditCalificacion = () => {
             alumno_id: alumno_id,
             evaluacion_id: evaluacion_id,
             nota: nota,
-            mensaje: mensaje,
-        });
-        navigate("/");
-    };
+            mensaje: mensaje
+        })
+        navigate('/')
+    }
 
     useEffect(() => {
         const getCalificacionById = async () => {
-            const response = await axios.get(`${endpoint}${id}`);
-            setAlumnoId(response.data.alumno_id);
-            setEvaluacionId(response.data.evaluacion_id);
-            setNota(response.data.nota);
-            setMensaje(response.data.mensaje);
-        };
-        getCalificacionById();
-    }, []);
+            const response = await axios.get(`${endpoint}${id}`)
+            setAlumnoId(response.data.alumno_id)
+            setEvaluacionId(response.data.evaluacion_id)
+            setNota(response.data.nota)
+            setMensaje(response.data.mensaje)
+            console.log(response.data);
+        }
+        getCalificacionById()
 
+    }, [])
+console.log(evaluacion_id);
     return (
         <div>
             <h2>Editar Calificación</h2>
             <form onSubmit={update}>
-                <div className="mb-3">
-                    <label className="form-label">Alumno_id</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Alumno_id</label>
                     <input
                         value={alumno_id}
                         onChange={(e) => setAlumnoId(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        type='text'
+                        className='form-control'
                     />
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Evaluacion_id</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Evaluacion_id</label>
                     <input
                         value={evaluacion_id}
                         onChange={(e) => setEvaluacionId(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        type='text'
+                        className='form-control'
                     />
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Nota</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Nota</label>
                     <input
                         value={nota}
                         onChange={(e) => setNota(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        type='text'
+                        className='form-control'
                     />
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Mensaje</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Mensaje</label>
                     <input
                         value={mensaje}
                         onChange={(e) => setMensaje(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        type='text'
+                        className='form-control'
                     />
                 </div>
-                <button type="submit" className="btn btn-success">
+                <button type='submit' className='btn btn-success'>
                     Update
                 </button>
             </form>
         </div>
-    );
-};
+    )
+}
 
-export default EditCalificacion;
+export default EditCalificacion

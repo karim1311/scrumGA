@@ -7,7 +7,7 @@ const endpoint = 'http://localhost:8000/api/tipo/'
 const EditTipo = () => {
 
     const [descripcion, setDescripcion] = useState('')
-    const [porcentaje, setPorsentaje] = useState('')
+    const [porcentaje, setPorcentaje] = useState('')
     const [rango, setRango] = useState('')
     const navigate = useNavigate()
     const { id } = useParams()
@@ -26,9 +26,8 @@ const EditTipo = () => {
 
         const getTiposById = async () => {
             const response = await axios.get(`${endpoint}${id}`)
-            console.log(response);
             setDescripcion(response.data.descripcion)
-            setPorsentaje(response.data.porcentaje)
+            setPorcentaje(response.data.porcentaje)
             setRango(response.data.rango)
         }
         getTiposById()
@@ -52,7 +51,7 @@ const EditTipo = () => {
                     <label className='form-label'>Porcentaje</label>
                     <input
                         value={porcentaje}
-                        onChange={(e) => setPorsentaje(e.target.value)}
+                        onChange={(e) => setPorcentaje(e.target.value)}
                         type='text'
                         className='form-control'
                     />
