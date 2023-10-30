@@ -9,7 +9,7 @@ const CreateAlumno = () => {
     const [nombre, setNombre] = useState('')
     const [apellido, setApellido] = useState('')
     const [correo, setCorreo] = useState('')
-    const [fecha_nacimiento, setAfechaNacimiento] = useState('')
+    const [fecha_nacimiento, setFechaNacimiento] = useState('')
     const [grupo_id, setGrupoId] = useState('')
     const navigate = useNavigate()
 
@@ -67,7 +67,7 @@ const CreateAlumno = () => {
                     <label className='form-label'>Fecha Nacimiento</label>
                     <input
                         value={fecha_nacimiento}
-                        onChange={(e) => setAfechaNacimiento(e.target.value)}
+                        onChange={(e) => setFechaNacimiento(e.target.value)}
                         type='text'
                         className='form-control'
                     />
