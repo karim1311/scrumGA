@@ -26,6 +26,7 @@ const EditTipo = () => {
 
         const getTiposById = async () => {
             const response = await axios.get(`${endpoint}${id}`)
+            console.log(response);
             setDescripcion(response.data.descripcion)
             setPorsentaje(response.data.porcentaje)
             setRango(response.data.rango)

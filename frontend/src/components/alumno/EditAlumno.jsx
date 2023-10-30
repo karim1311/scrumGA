@@ -81,20 +81,9 @@ const EditAlumno = () => {
 
             />
           </div>
-          </form>
 
           <div>
-            <h2>Editar Alumno</h2>
-            <form onSubmit={update}>
-              <div className='mb-3'>
-                <label className='form-label'>DNI</label>
-                <input
-                  value={dni}
-                  onChange={(e) => setDni(e.target.value)}
-                  type='text'
-                  className='form-control'
-                />
-              </div>
+            
 
               <div className="mb-3">
                 <label className="form-label">
@@ -123,7 +112,7 @@ const EditAlumno = () => {
                   onChange={(e) => setCorreo(e.target.value)}
                   type="text"
                   className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-
+                  
                 />
               </div>
 
@@ -138,8 +127,8 @@ const EditAlumno = () => {
                   onChange={(e) => setFechaNacimiento(e.target.value)}
                   type="text"
                   className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-
-                />
+                  
+                  />
               </div>
 
               <div className="mb-3">
@@ -156,18 +145,18 @@ const EditAlumno = () => {
                   max={"5"}
                   name="grupo_id"
                   className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-
-                />
+                  
+                  />
               </div>
 
               <button type="submit" className=" mt-5 mb-3 bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">
                 Actualizar
               </button>
-            </form>
 
 
           </div>
 
+        </form>
       </div>
     </div>  );
 };

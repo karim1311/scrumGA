@@ -17,7 +17,7 @@ const ShowCalificaciones = () => {
 
     const deleteCalicacion = async (id) => {
 
-        await axios.delete(`${endpoint}/calificaciones/${id}`)
+        await axios.delete(`${endpoint}/calificacion/${id}`)
         getAllCalificaciones()
 
     }
@@ -34,15 +34,15 @@ const ShowCalificaciones = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {calificaciones.map((calificaciones) => (
-                        <tr key={calificaciones.id}>
-                            <td>{calificaciones.alumno_id}</td>
-                            <td>{calificaciones.evaluacion_id}</td>
-                            <td>{calificaciones.nota}</td>
-                            <td>{calificaciones.mensaje}</td>
+                    {calificaciones.map((calificacion) => (
+                        <tr key={calificacion.id}>
+                            <td>{calificacion.alumno_id}</td>
+                            <td>{calificacion.evaluacion_id}</td>
+                            <td>{calificacion.nota}</td>
+                            <td>{calificacion.mensaje}</td>
                             <td>
-                                <Link to={`/calificacionedit/${calificaciones.id}`} className='btn btn-info'>Edit</Link>
-                                <button onClick={() => deleteCalicacion(calificaciones.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/calificacionedit/${calificacion.id}`} className='btn btn-info'>Edit</Link>
+                                <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     ))}
