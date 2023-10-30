@@ -2,12 +2,13 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/evaluacion/'
+const endpoint = 'http://localhost:8000/api/tipo/'
 
-const EditEvaluaciones = () => {
+const EditTipo = () => {
 
     const [descripcion, setDescripcion] = useState('')
-    const [tipo_id, setTipoId] = useState('')
+    const [porcentaje, setPorsentaje] = useState('')
+    const [rango, setRango] = useState('')
     const navigate = useNavigate()
     const { id } = useParams()
 
@@ -15,27 +16,29 @@ const EditEvaluaciones = () => {
         e.preventDefault();
         await axios.put(`${endpoint}${id}`, {
             descripcion: descripcion,
-            tipo_id: tipo_id,
+            porcentaje: porcentaje,
+            rango: rango
         })
         navigate('/')
     }
 
     useEffect(() => {
 
-        const getEvaluacionesById = async () => {
+        const getTiposById = async () => {
             const response = await axios.get(`${endpoint}${id}`)
             setDescripcion(response.data.descripcion)
-            setTipoId(response.data.tipo_id)
+            setPorsentaje(response.data.porcentaje)
+            setRango(response.data.rango)
         }
-        getEvaluacionesById()
+        getTiposById()
 
     }, [])
     return (
         <div>
-            <h2>Editar Evaluaciones</h2>
+            <h2>Editar Tipo</h2>
             <form onSubmit={update}>
                 <div className='mb-3'>
-                    <label className='form-label'>Descripcion</label>
+                    <label className='form-label'>Descripción</label>
                     <input
                         value={descripcion}
                         onChange={(e) => setDescripcion(e.target.value)}
@@ -45,10 +48,20 @@ const EditEvaluaciones = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'>Tipo</label>
+                    <label className='form-label'>Porcentaje</label>
                     <input
-                        value={tipo_id}
-                        onChange={(e) => setTipoId(e.target.value)}
+                        value={porcentaje}
+                        onChange={(e) => setPorsentaje(e.target.value)}
+                        type='text'
+                        className='form-control'
+                    />
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'>Rango</label>
+                    <input
+                        value={rango}
+                        onChange={(e) => setRango(e.target.value)}
                         type='text'
                         className='form-control'
                     />
@@ -59,4 +72,4 @@ const EditEvaluaciones = () => {
     )
 }
 
-export default EditEvaluaciones
+export default EditTipo

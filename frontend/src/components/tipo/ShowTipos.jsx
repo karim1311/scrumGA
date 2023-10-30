@@ -15,7 +15,7 @@ const ShowTipos = () => {
         setTipos(response.data)
     }
 
-    const deleteTipos = async (id) => {
+    const deleteTipo = async (id) => {
 
         await axios.delete(`${endpoint}/tipos/${id}`)
         getAllTipos()
@@ -35,14 +35,14 @@ const ShowTipos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {tipos.map((tipos) => (
-                        <tr key={tipos.id}>
-                            <td>{tipos.descripcion}</td>
-                            <td>{tipos.porcentaje}</td>
-                            <td>{tipos.rango}</td>
+                    {tipos.map((tipo) => (
+                        <tr key={tipo.id}>
+                            <td>{tipo.descripcion}</td>
+                            <td>{tipo.porcentaje}</td>
+                            <td>{tipo.rango}</td>
                             <td>
-                                <Link to={`/tiposedit/${tipos.id}`} className='btn btn-info'>Edit</Link>
-                                <button onClick={() => deleteTipos(tipos.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/tipoedit/${tipo.id}`} className='btn btn-info'>Edit</Link>
+                                <button onClick={() => deleteTipo(tipo.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     ))}

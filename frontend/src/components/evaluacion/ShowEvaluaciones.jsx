@@ -15,7 +15,7 @@ const ShowEvaluaciones = () => {
         setEvaluaciones(response.data)
     }
 
-    const deleteEvaluaciones = async (id) => {
+    const deleteEvaluacion = async (id) => {
 
         await axios.delete(`${endpoint}/evaluacion/${id}`)
         getAllEvaluaciones()
@@ -34,13 +34,13 @@ const ShowEvaluaciones = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {evaluaciones.map((evaluaciones) => (
-                        <tr key={evaluaciones.id}>
-                            <td>{evaluaciones.descripcion}</td>
-                            <td>{evaluaciones.tipo_id}</td>
+                    {evaluaciones.map((evaluacion) => (
+                        <tr key={evaluacion.id}>
+                            <td>{evaluacion.descripcion}</td>
+                            <td>{evaluacion.tipo_id}</td>
                             <td>
-                                <Link to={`/evaluacionedit/${evaluaciones.id}`} className='btn btn-info'>Edit</Link>
-                                <button onClick={() => deleteEvaluaciones(evaluaciones.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/evaluacionedit/${evaluacion.id}`} className='btn btn-info'>Edit</Link>
+                                <button onClick={() => deleteEvaluacion(evaluacion.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     ))}
