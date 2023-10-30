@@ -1,42 +1,43 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Establece el ancho del nav */
+.d-flex nav {
+  width: 40%; /* Ajusta según tus necesidades */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Establece el ancho del contenido principal */
+.d-flex .flex-2 {
+  width: 100%; /* Ajusta según tus necesidades */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Añade estilos adicionales según sea necesario */
+.container {
+ 
+ /* Alinea los elementos al comienzo y al final del contenedor horizontalmente */
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/* App.css */
+
+
+
+/* Añade estilos adicionales según sea necesario */
+/* App.css */
+body {
+  
+  color: black; /* Establece el color del texto en negro */
+  
 }
 
-.card {
-  padding: 2em;
+.d-flex {
+  display: flex;
+  height: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.flex-1 {
+  flex: 1;
+  margin-right: 100px;
+}
+
+.flex-2 {
+  flex: 3;
 }
