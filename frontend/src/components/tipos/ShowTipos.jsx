@@ -24,10 +24,10 @@ const ShowTipos = () => {
     return (
         <div>
             <div className='d-grid gap-2'>
-                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/tipocreate" className='btn btn-success btn-lg mt-2 mb-2 text-white py-1 px-2 bg-green-400 rounded-lg'>Crear Tipo</Link>
             </div>
-            <table className='table table-striped'>
-                <thead className='bg-primary text-white'>
+            <table className='table text-gray-400 border-separate space-y-6 text-sm w-[700px]'>
+                <thead className='bg-primary text-black'>
                     <tr>
                         <th>Descripción</th>
                         <th>Porcentaje</th>
@@ -35,14 +35,14 @@ const ShowTipos = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {tipos.map((tipos) => (
-                        <tr key={tipos.id}>
-                            <td>{tipos.descripcion}</td>
-                            <td>{tipos.porcentaje}</td>
-                            <td>{tipos.rango}</td>
+                    {tipos.map((tipo) => (
+                        <tr key={tipo.id}>
+                            <td>{tipo.descripcion}</td>
+                            <td>{tipo.porcentaje}</td>
+                            <td>{tipo.rango}</td>
                             <td>
-                                <Link to={`/tiposedit/${tipos.id}`} className='btn btn-info'>Edit</Link>
-                                <button onClick={() => deleteTipos(tipos.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/tipoedit/${tipos.id}`} className='btn btn-info'>✏</Link>
+                                <button onClick={() => deleteTipos(tipos.id)} className='btn btn-danger'>🗑</button>
                             </td>
                         </tr>
                     ))}

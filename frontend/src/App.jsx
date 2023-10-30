@@ -30,75 +30,71 @@ function App() {
   return (
 
     <Router>
-      <div className="d-flex">
-        <nav className="flex-1 bg-blue-900 h-screen drop-shadow-2xl rounded-lg" >
-          <div className='text-white pb-15 text-2xl text-center pt-10'>
+      <div className="flex w-[300px]">
+        <nav className="flex-1 bg-[#20232f] h-[720px] w-[300px] drop-shadow-xl" >
+          <div className='text-[#04b2bf] text-2xl text-center pt-5'>
             <h2>Admin</h2>
             <p>[name Admin]</p>
           </div>
 
-          <ul className='pl-5 pt-40'>
+          <ul className='pl-5 pt-16 w-[300px] flex flex-col text-[#04b2bf]'>
             <li className='pb-5 bg-'>
-              <Link to="/" className='text-white pb-15 text-2xl'><span className='m-3 mr-16  hover:text-blue-400'>Inicio</span>
+              <Link to="/" className=' pb-15 text-xl'><span className='m-2   hover:text-blue-400'>Inicio</span>
                 <i className="fa-solid fa-chalkboard-user" /></Link>
             </li>
             <li className='pb-5'>
-              <Link to="/alumnos" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Lista de Alumnos</span>
+              <Link to="/alumnos" className='text-[#04b2bf] text-xl'><span className='m-2  hover:text-blue-400'>Lista de Alumnos</span>
                 <i className="fa-solid fa-graduation-cap" /></Link>
             </li>
-            <li className='pb-5'>
-
-              <Link to="/alumnocreate" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registrar  Alumno</span>
+            {/* <li className='pb-5'>
+              <Link to="/alumnocreate" className='text-xl'><span className='m-2  hover:text-blue-400'>Registrar  Alumno</span>
                 <i className="fa-solid fa-user-pen"></i></Link>
-            </li>
+            </li> */}
+
             <li className='pb-5'>
-              <Link to="/calificaciones" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Calificaciones</span>
+              <Link to="/calificaciones" className='text-xl'><span className='m-2  hover:text-blue-400'>Calificaciones</span>
                 <i className="fa-solid fa-chalkboard" /></Link>
             </li>
-            <li className='pb-5'>
-              <Link to="/calificacionescreate" className='text-white text-2xl'><span className='m-3  hover:text-blue-400'>Registrar Calificación</span>
+            {/* <li className='pb-5'>
+              <Link to="/calificacioncreate" className='text-xl'><span className='m-2  hover:text-blue-400'>Registrar Calificación</span>
                 <i className="fa-solid fa-pen-to-square"></i></Link>
-            </li>
+            </li> */}
 
-            <hr />
             <li className='pb-5'>
-              <Link to="/evaluaciones" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Evaluaciones</span>
+              <Link to="/evaluaciones" className='text-xl'><span className='m-3 hover:text-blue-400'>Evaluaciones</span>
                 <i className="fa-solid fa-chalkboard" /></Link>
             </li>
+            {/* <li className='pb-5'>
+              <Link to="/evaluacioncreate" className='text-xl'><span className='m-2 hover:text-blue-400'>Registrar Evaluaciones</span>
+                <i className="fa-solid fa-chalkboard" /></Link>
+            </li> */}
+
             <li className='pb-5'>
-              <Link to="/evaluacionescreate" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Registrar Evaluaciones</span>
+              <Link to="/employees" className='text-xl'><span className='m-2 hover:text-blue-400'>Empleados</span>
                 <i className="fa-solid fa-chalkboard" /></Link>
             </li>
-            
-            <li className='pb-5'>
-              <Link to="/employees" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Empleados</span>
+            {/* <li className='pb-5'>
+              <Link to="/employeecreate" className='text-xl'><span className='m-2 hover:text-blue-400'>Registrar Empleados</span>
                 <i className="fa-solid fa-chalkboard" /></Link>
-            </li>
-            <li className='pb-5'>
-              <Link to="/employeescreate" className='text-white text-2xl'><span className='m-3 hover:text-blue-400'>Registrar Empleados</span>
-                <i className="fa-solid fa-chalkboard" /></Link>
-            </li>
-            {/* esto de abajo ya esta implementado arriba */}
-            <hr />
+            </li> */}
+
             <li className="pb-5">
-              <Link to="/tipos" className="text-white text-2xl">
-                <i className="fa-solid fa-graduation-cap mr-3" />
-                <span className="m-3">Tipos</span>
-
+              <Link to="/tipos" className="text-xl">
+                <i className="fa-solid fa-graduation-cap mr-2" />
+                <span className="m-2">Tipos</span>
               </Link>
             </li>
-            <li className="pb-5">
-              <Link to="/tiposcreate" className="text-white text-2xl">
-                <i className="fa-solid fa-user-pen mr-3"></i>
-                <span className="m-3">Registrar Tipo</span>
-
+            {/* <li className="pb-5">
+              <Link to="/tipocreate" className="text-xl">
+                <i className="fa-solid fa-user-pen mr-2"></i>
+                <span className="m-2">Registrar Tipo</span>
               </Link>
-            </li>
-
+              </li> */}
           </ul>
         </nav>
 
-        <div className="flex-2">
+        <div className="flex-2 flex flex-row justify-center items-baseline mt-20 w-screen bg-[#323744]">
+
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/About/:id" element={<About />} />
@@ -113,19 +109,19 @@ function App() {
             <Route path='/alumnoedit/:id' element={<EditAlumno />} />
 
             <Route path='/calificaciones' element={<ShowCalificaciones />} />
-            <Route path='/calificacionescreate' element={<CreateCalificaciones />} />
-            <Route path='/calificacionesedit/:id' element={<EditCalificaciones />} />
+            <Route path='/calificacioncreate' element={<CreateCalificaciones />} />
+            <Route path='/calificacionedit/:id' element={<EditCalificaciones />} />
 
             <Route path="/evaluaciones" element={<ShowEvaluaciones />} />
-            <Route path="/evaluacionescreate" element={<CreateEvaluaciones />} />
-            <Route path="/evaluacionesedit/:id" element={<EditEvaluaciones />} />
+            <Route path="/evaluacioncreate" element={<CreateEvaluaciones />} />
+            <Route path="/evaluacionedit/:id" element={<EditEvaluaciones />} />
 
             <Route path="/tipos" element={<ShowTipos />} />
-            <Route path="/tiposcreate" element={<CreateTipos />} />
-            <Route path="/tiposedit/:id" element={<EditTipos />} />
+            <Route path="/tipocreate" element={<CreateTipos />} />
+            <Route path="/tipoedit/:id" element={<EditTipos />} />
 
             <Route path="/employees" element={<ShowEmployees />} />
-            <Route path="/employeescreate" element={<CreateEmployees />} />
+            <Route path="/employeecreate" element={<CreateEmployees />} />
             <Route path="/employeeedit/:id" element={<EditEmployees />} />
           </Routes>
         </div>

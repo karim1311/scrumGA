@@ -39,7 +39,7 @@ const EditCalificaciones = () => {
             <h2>Editar Calificación</h2>
             <form onSubmit={update}>
                 <div className="mb-3">
-                    <label className="form-label">Alumno_id</label>
+                    <label className="form-label">Alumno</label>
                     <input
                         value={alumno_id}
                         onChange={(e) => setAlumnoId(e.target.value)}
@@ -49,7 +49,7 @@ const EditCalificaciones = () => {
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label">Evaluacion_id</label>
+                    <label className="form-label">Evaluacion</label>
                     <input
                         value={evaluacion_id}
                         onChange={(e) => setEvaluacionId(e.target.value)}

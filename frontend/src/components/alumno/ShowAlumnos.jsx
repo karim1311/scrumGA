@@ -24,18 +24,16 @@ const ShowAlumnos = () => {
     return (
         <div>
             <div className='d-grid gap-2'>
-                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/alumnocreate" className='btn btn-success btn-lg mt-2 mb-2 bg-[#04b2bf] py-1 px-2 text-white rounded-lg'>Crear Alumno</Link>
             </div>
-            <table className='table table-striped'>
-                <thead className='bg-primary text-white'>
+            <table className="table text-gray-400 border-separate space-y-6 text-sm w-[700px]">                <thead className='bg-primary text-white'>
                     <tr>
-                        <th>dni</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Correo</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Grupo Id</th>
-                        <th>Action</th>
+                        <th>DNI</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>CORREO</th>
+                        <th>FECHA NAC.</th>
+                        <th>GRUPO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,8 +46,8 @@ const ShowAlumnos = () => {
                             <td>{alumno.fecha_nacimiento}</td>
                             <td>{alumno.grupo_id}</td>
                             <td>
-                                <Link to={`/alumnoedit/${alumno.id}`} className='btn btn-info'>Editar</Link>
-                                <button onClick={() => deleteAlumno(alumno.id)} className='btn btn-danger'>Eliminar</button>
+                                <Link to={`/alumnoedit/${alumno.id}`} className='btn btn-info mr-3'>✏</Link>
+                                <button onClick={() => deleteAlumno(alumno.id)} className='btn btn-danger ml-3'>🗑</button>
                             </td>
                         </tr>
                     ))}
