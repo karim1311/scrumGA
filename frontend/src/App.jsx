@@ -50,6 +50,7 @@ function App() {
                 <span className="m-3 hover:text-blue-400 ">Alumnos</span>
               </Link>
             </li>
+{/*             
             <li className="pb-5">
               <Link to="/alumnocreate" className="text-white">
                 <i className="fa-solid fa-user-pen text-[#01eefe]"></i>
@@ -57,9 +58,9 @@ function App() {
                   Registrar Alumno
                 </span>
               </Link>
-            </li>
+            </li> */}
 
-            <hr className="p-2"/>
+            
             <li className="pb-5">
               <Link to="/tipos" className="text-white">
                 <i className="fa-solid fa-building text-[#01eefe]" />
@@ -72,53 +73,39 @@ function App() {
                 <span className="m-3 hover:text-blue-400 ">Crear Tipo</span>
               </Link>
             </li> */}
-            <hr className="p-2"/>
+            
             <li className="pb-5">
               <Link to="/calificaciones" className="text-white">
                 <i className="fa-solid fa-chalkboard text-[#01eefe] " />
                 <span className="m-3  hover:text-blue-400">Calificaciones</span>
               </Link>
             </li>
-            <li className="pb-5">
+            {/* <li className="pb-5">
               <Link to="/calificacioncreate" className="text-white">
                 <i className="fa-solid fa-pen-to-square text-[#01eefe] "></i>
                 <span className="m-3  hover:text-blue-400">
                   Registrar Calificación
                 </span>
               </Link>
-            </li>
+            </li> */}
 
-            <hr className="p-2"/>
+            
             <li className="pb-5">
               <Link to="/evaluaciones" className="text-white">
               <i class="fa-solid fa-file-lines text-[#01eefe]"></i>
                 <span className="m-3 hover:text-blue-400">Evaluaciones</span>
               </Link>
             </li>
-            <li className="pb-5">
+            
+            {/* <li className="pb-5">
               <Link to="/evaluacioncreate" className="text-white">
               <i class="fa-solid fa-file-pen text-[#01eefe]"></i>
                 <span className="m-3 hover:text-blue-400">
                   Crear Evaluacion
                 </span>
               </Link>
-            </li>
-
-            {/* <hr />
-            <li className="pb-5">
-              <Link to="/employees" className="text-white">
-                <i className="fa-solid fa-chalkboard text-[#01eefe]" />
-                <span className="m-3 hover:text-blue-400">Empleados</span>
-              </Link>
-            </li>
-            <li className="pb-5">
-              <Link to="/employeecreate" className="text-white">
-                <i className="fa-solid fa-chalkboard text-[#01eefe]" />
-                <span className="m-3 hover:text-blue-400">
-                  Registrar Empleados
-                </span>
-              </Link>
             </li> */}
+            
           </ul>
         </nav>
 
@@ -126,12 +113,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/About/:id" element={<About />} />
-            <Route path="/Contact/:id" element={<Contact />} />
-
-            <Route path="/Notes/:id" element={<Notes />} />
-            <Route path="/RegistroCali/:id" element={<RegistroCali />} /> */}
-
+            
             <Route path="/alumnos" element={<ShowAlumnos />} />
             <Route path="/alumnocreate" element={<CreateAlumno />} />
             <Route path="/alumnoedit/:id" element={<EditAlumno />} />
