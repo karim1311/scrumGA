@@ -135,12 +135,11 @@ function App() {
             <Route path="/alumnocreate" element={<CreateAlumno />} />
             <Route path="/alumnoedit/:id" element={<EditAlumno />} />
 
+
             <Route path="/calificaciones" element={<ShowCalificaciones />} />
             <Route path="/calificacioncreate" element={<CreateCalificacion />}/>
             <Route path="/calificacionedit/:id"element={<EditCalificacion />}/>
-             
-              
-            
+
 
             <Route path="/evaluaciones" element={<ShowEvaluaciones />} />
             <Route path="/evaluacioncreate" element={<CreateEvaluacion />} />

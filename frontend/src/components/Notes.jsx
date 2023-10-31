@@ -1,24 +1,26 @@
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import RegistroCali from "./components/RegistroCali"
 
-export default function Notes() {
-  const [notas, setNotas] = useState([]);
+// export default function Notes() {
+//   const [notas, setNotas] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("http://localhost:8000/api/calificaciones");
-        const data = await response.json();
-        setNotas(data);
-        console.log(data);
-      } catch (error) {
-        console.error("Error al obtener las notas:", error);
-      }
-    }
+//   useEffect(() => {
+//     async function fetchData() {
+//       try {
+//         const response = await fetch("http://localhost:8000/api/calificaciones");
+//         const data = await response.json();
+//         setNotas(data);
+//         console.log(data);
+//       } catch (error) {
+//         console.error("Error al obtener las notas:", error);
+//       }
+//     }
 
-    fetchData();
-  }, []);
+//     fetchData();
+//   }, []);
+
 
   return (
     <div className="flex justify-center flex-col items-center mt-7">
@@ -61,6 +63,7 @@ export default function Notes() {
     </div>
   );
 }
+
 
 
  
