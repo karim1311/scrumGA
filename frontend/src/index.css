@@ -61,7 +61,7 @@
 .edit {
   color: white;
   background-color: var(--grisclaro);
-  width: 50%;
+  width: 100%;
   border-radius: 20px;
   padding: 20px;
 }
