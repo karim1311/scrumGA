@@ -3,7 +3,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const endpoint = "http://localhost:8000/api";
+
 const ShowAlumnos = () => {
+  const [busqueda, setBusqueda] = useState("");
+  const [resultadosFiltrados, setResultadosFiltrados] = useState([]); // Inicializa con un array vacío
+
   const [alumnos, setAlumnos] = useState([]);
   useEffect(() => {
     getAllAlumnos();
@@ -18,14 +22,51 @@ const ShowAlumnos = () => {
     await axios.delete(`${endpoint}/alumno/${id}`);
     getAllAlumnos();
   };
+
+  useEffect(() => {
+    // Filtrar los resultados basados en el valor de búsqueda
+    const resultados = alumnos.filter((alumno) =>
+      alumno.dni.toLowerCase().includes(busqueda.toLowerCase()) ||
+      alumno.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+      alumno.apellido.toLowerCase().includes(busqueda.toLowerCase()) ||
+      alumno.correo.toLowerCase().includes(busqueda.toLowerCase()) 
+    );
+    setResultadosFiltrados(resultados);
+  }, [alumnos, busqueda]);
+
+  const handleInputChange = (event) => {
+    const valorBusqueda = event.target.value;
+    setBusqueda(valorBusqueda);
+  };
   return (
-    <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
-      <div className="flex justify-start w-5/6 p-4 bg-fuchsia-600">
+    <div className="bg-[#1f252e] inline-block w-full overflow-auto m-[-50]">
+      <div className="flex justify-start w-5/6 p-0">
         <Link to="/alumnocreate" className="button  btn-lg mt-2 mb-2 ">
           Create Alumno
         </Link>
       </div>
-      <table className="table table-striped border-separate space-y-6 text-sm">
+      <div className="flex lg:justify-between border-b-2 border-fuchsia-900 pb-1">
+        <h2 className="text-2xl text-gray-500 font-bold">Todos los Alumnos</h2>
+        <div className="text-center flex-auto">
+          <input
+            type="text"
+            name="busca"
+            placeholder="Search..."
+            className="
+            text-slate-400
+            bg-[#1f252e]
+             w-1/3
+             py-2
+             border-b-2 border-slate-100
+             outline-none
+             focus:border-yellow-400
+           "
+            value={busqueda}
+            onChange={handleInputChange}
+          />
+        </div>
+      </div>
+      <table className="table table-striped border-separate space-y-6 text-sm m-auto mx-auto">
         <thead className="bg-[#434a5a] text-white">
           <tr className="tra">
             <th className="p-3">ID</th>
@@ -39,7 +80,7 @@ const ShowAlumnos = () => {
           </tr>
         </thead>
         <tbody>
-          {alumnos.map((alumno) => (
+          {resultadosFiltrados.map((alumno) => (
             <tr
               key={alumno.id}
               className="bg-[#323846] lg:text-white text-center tra"
