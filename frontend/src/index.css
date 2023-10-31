@@ -4,6 +4,12 @@
 @tailwind utilities;
 
 
+:root{
+  --grisoclaro: #323744;
+  --grisoscuro: #20232f;
+  --aqua: #04b2bf;
+  --aqua2: aquamarine;
+}
 
 .table {
     border-spacing: 0 15px;
@@ -30,3 +36,20 @@
   tr th:nth-child(1) {
     border-radius:  0.625rem 0 0 0.625rem ;
   }
+.buttom{
+  background-color: aqua;
+  border-radius: 5px ;  
+  padding: 4px 6px;
+}
+
+.buttom:houver{
+
+  background-color: aquamarine;
+
+}
+.navbar{
+
+
+}
+
+
