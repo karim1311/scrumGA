@@ -22,9 +22,9 @@ const ShowCalificaciones = () => {
 
     }
     return (
-        <div>
-            <div className='d-grid gap-2'>
-                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+        <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
+      <div className='d-grid gap-2'>
+                <Link to="calificacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
             </div>
             <table className='table table-striped'>
                 <thead className='bg-primary text-white'>
@@ -41,7 +41,7 @@ const ShowCalificaciones = () => {
                             <td>{calificacion.nota}</td>
                             <td>{calificacion.mensaje}</td>
                             <td>
-                                <Link to={`/calificacionedit/${calificacion.id}`} className='btn btn-info'>Edit</Link>
+                                <Link to={`/editcalificacion/${calificacion.id}`} className='btn btn-info'>Edit</Link>
                                 <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
