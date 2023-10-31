@@ -230,5 +230,4 @@ const EditAlumno = () => {
     </div>
   );
 };
-
 export default EditAlumno;

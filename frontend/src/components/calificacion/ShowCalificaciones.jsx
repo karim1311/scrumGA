@@ -24,7 +24,7 @@ const ShowCalificaciones = () => {
     return (
         <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
       <div className='d-grid gap-2'>
-                <Link to="calificacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/calificacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
             </div>
             <table className='table table-striped'>
                 <thead className='bg-primary text-white'>

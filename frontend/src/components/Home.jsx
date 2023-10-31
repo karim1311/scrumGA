@@ -1,30 +1,29 @@
-import React from 'react';
 import { useState } from 'react'
 import axios from 'axios'
 
 function Home() {
   const [alumnos, setAlumnos] = useState([])
-    
-  async function conectarBackend(){
+
+  async function conectarBackend() {
     const response = await fetch("http://localhost:8000/api/alumnos");
     const data = await response.json();
     setAlumnos(data);
     console.log(data);
   }
-  
-  async function enviarDatos(){
-    try{
+
+  async function enviarDatos() {
+    try {
       const body = {};
 
       const inputAlumno = Array.from(document.getElementsByClassName('input-alumno'));
-      inputAlumno.forEach((e)=>{
+      inputAlumno.forEach((e) => {
         body[e.name] = e.value;
       })
 
       const response = await axios.post("http://localhost:8000/api/alumno", body);
       console.log("respuesta del server", response.data);
 
-    }catch (error){
+    } catch (error) {
       console.error("Hay un error", error);
     }
   }

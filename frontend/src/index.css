@@ -22,7 +22,7 @@
 
 .button {
   grid-column: span 2;
-  width: 50%;
+  width: 35%;
   padding: 12px;
   background-color: var(--aqua);
   color: var(--grisoscuro);
@@ -73,7 +73,6 @@
 .form_edit span {
   color:rgb(147, 224, 224);
 }
-
 
 
 .table {

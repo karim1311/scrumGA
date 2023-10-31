@@ -122,7 +122,8 @@ function App() {
           </ul>
         </nav>
 
-        <div className="flex-2">
+        <div className="flex-2 flex flex-row justify-center items-baseline mt-20 w-screen">
+
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/About/:id" element={<About />} />
