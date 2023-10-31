@@ -17,7 +17,7 @@ const CreateEmployee = () => {
         e.preventDefault();
         await axios.post(endpoint, {name: name, last_name: last_name, job: job, phone: phone, address: address, age: age})
         navigate('/')
-
+        
     }
   return (
     <div>

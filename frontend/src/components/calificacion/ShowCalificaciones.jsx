@@ -41,7 +41,7 @@ const ShowCalificaciones = () => {
                             <td>{calificacion.nota}</td>
                             <td>{calificacion.mensaje}</td>
                             <td>
-                                <Link to={`/editcalificacion/${calificacion.id}`} className='btn btn-info'>Edit</Link>
+                                <Link to={`/calificacionedit/${calificacion.id}`} className='btn btn-info'>Edit</Link>
                                 <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>

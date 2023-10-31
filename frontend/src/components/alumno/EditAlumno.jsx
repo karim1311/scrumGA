@@ -42,16 +42,10 @@ const EditAlumno = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="mt-5 text-amber-50">
-        <p className="text-xl mb-4">Edita al alumno </p>
-        <p className="max-w-screen-sm h-14 text-sm p-2 rounded">
-          Bienvenido
-          <br />
-          Selecciona la accion que quieras realizar en las pestañas del menu de
-          la izquierda
-        </p>
+        
+        
       </div>
-      <div className="edit">
-  
+      <div className="crud">
         <h2 className="text-center font-bold text-2xl font-roboto mb-4">
           Editando alumno
         </h2>
@@ -139,7 +133,7 @@ const EditAlumno = () => {
             />
           </div>
 
-          <div className="mb-3 block">
+          <div className="mb-3 ">
             <label className="form-label">
               <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                 Nombre
@@ -202,6 +196,7 @@ const EditAlumno = () => {
                   Grupo
                 </span>
               </label>
+              {/*               
               <input
                 value={grupo_id}
                 onChange={(e) => setGrupoId(e.target.value)}
@@ -210,10 +205,22 @@ const EditAlumno = () => {
                 max={"5"}
                 name="grupo_id"
                 className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-              />
+              /> */}
+
+              <select 
+              name="grupo_id" 
+              id="grupo_id" 
+              onChange={(e) => setGrupoId(e.target.value)}
+              className="mt-1 px-3 py-2 bg-slate-700 border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1">
+                  <option value={grupo_id}>{grupo_id}</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+            </select>
             </div>
 
-            <button type="submit" className=" button">
+            <button type="submit" className="button">
               Actualizar
             </button>
           </div>
