@@ -63,7 +63,7 @@ export default function Alumnos() {
               />
             </div>
           </div>
-          <table className="table text-gray-400 border-separate space-y-6 text-sm">
+          <table className="table text-black border-separate space-y-6 text-sm">
             <thead className="bg-blue-500 text-white">
               <tr className="tra">
                 <th className="p-3">ID</th>

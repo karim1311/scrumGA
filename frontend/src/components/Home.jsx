@@ -30,11 +30,11 @@ function Home() {
   }
 
   return (
-    <div className='pt-20'>
+    <div className='pt-20 text-amber-50'>
       <h2 className='font-bold text-2xl'>Página de inicio</h2>
       <p className='pt-5'>Bienvenido a la página de inicio de mi aplicación.</p>
       
-      <h1>Academia</h1>
+      {/* <h1>Academia</h1>
       <button onClick={conectarBackend}>Mostrar lista</button>
       {alumnos.map((el, key)=>{
         return <h2 key={key}>{el.nombre} </h2>
@@ -56,8 +56,8 @@ function Home() {
         <option value="3">3</option>
         <option value="4">4</option>
       </select>
-      {/* <input type="text" name='grupo_id' className='input-alumno'/> */}
-      <button onClick={enviarDatos}>Guardar</button><br /><br />
+      <input type="text" name='grupo_id' className='input-alumno'/>
+      <button onClick={enviarDatos}>Guardar</button><br /><br /> */}
 
     </div>
   );
