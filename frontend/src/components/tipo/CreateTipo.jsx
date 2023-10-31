@@ -38,7 +38,7 @@ const CreateTipo = () => {
           <div className="mb-3">
             <label className="form-label">
               <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                Descripción
+                DESCRIPCIÓN
               </span>
             <textarea
               cols="25"

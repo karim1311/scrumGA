@@ -41,10 +41,6 @@ const EditAlumno = () => {
   }, []);
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="mt-5 text-amber-50">
-        
-        
-      </div>
       <div className="crud">
         <h2 className="text-center font-bold text-2xl font-roboto mb-4">
           Editando alumno

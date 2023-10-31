@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-// import About from "./components/About";
+ import About from "./components/About";
 // import Contact from "./components/Contact";
 // import Notes from "./components/Notes";
 // import RegistroCali from "./components/RegistroCali";
@@ -43,11 +43,11 @@ function App() {
                 <span className="m-3  hover:text-blue-400">Inicio</span>
               </Link>
             </li>
-            <hr />
+            <hr className="p-2"/>
             <li className="pb-5">
               <Link to="/alumnos" className="text-white">
                 <i className="fa-solid fa-graduation-cap text-[#01eefe]" />
-                <span className="m-3 hover:text-blue-400">Alumnos</span>
+                <span className="m-3 hover:text-blue-400 ">Alumnos</span>
               </Link>
             </li>
             <li className="pb-5">
@@ -59,7 +59,7 @@ function App() {
               </Link>
             </li>
 
-            <hr />
+            <hr className="p-2"/>
             <li className="pb-5">
               <Link to="/tipos" className="text-white">
                 <i className="fa-solid fa-building text-[#01eefe]" />
@@ -72,7 +72,7 @@ function App() {
                 <span className="m-3 hover:text-blue-400 ">Crear Tipo</span>
               </Link>
             </li> */}
-            <hr />
+            <hr className="p-2"/>
             <li className="pb-5">
               <Link to="/calificaciones" className="text-white">
                 <i className="fa-solid fa-chalkboard text-[#01eefe] " />
@@ -88,7 +88,7 @@ function App() {
               </Link>
             </li>
 
-            <hr />
+            <hr className="p-2"/>
             <li className="pb-5">
               <Link to="/evaluaciones" className="text-white">
               <i class="fa-solid fa-file-lines text-[#01eefe]"></i>
@@ -104,7 +104,7 @@ function App() {
               </Link>
             </li>
 
-            <hr />
+            {/* <hr />
             <li className="pb-5">
               <Link to="/employees" className="text-white">
                 <i className="fa-solid fa-chalkboard text-[#01eefe]" />
@@ -118,7 +118,7 @@ function App() {
                   Registrar Empleados
                 </span>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
