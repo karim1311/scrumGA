@@ -16,7 +16,7 @@ const EditEvaluacion = () => {
         e.preventDefault();
         await axios.put(`${endpoint}${id}`, {
             descripcion: descripcion,
-            tipo_id: tipo_id, 
+            tipo_id: tipo_id,
             fecha: fecha
         })
         navigate('/')
@@ -24,14 +24,14 @@ const EditEvaluacion = () => {
 
     useEffect(() => {
 
-        const getEvaluacionById = async () => {
+        const getTipoById = async () => {
             const response = await axios.get(`${endpoint}${id}`)
             console.log(response);
             setDescripcion(response.data.descripcion)
             setTipoId(response.data.tipo_id)
             setFecha(response.data.fecha)
         }
-        getEvaluacionById()
+        getTipoById()
 
     }, [])
     return (
@@ -39,7 +39,7 @@ const EditEvaluacion = () => {
             <h2>Editar Evaluacion</h2>
             <form onSubmit={update}>
                 <div className='mb-3'>
-                    <label className='form-label'>Descripcion</label>
+                    <label className='form-label'>Descripción</label>
                     <input
                         value={descripcion}
                         onChange={(e) => setDescripcion(e.target.value)}
@@ -49,7 +49,7 @@ const EditEvaluacion = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'>Tipo</label>
+                    <label className='form-label'>Tipo ID</label>
                     <input
                         value={tipo_id}
                         onChange={(e) => setTipoId(e.target.value)}
