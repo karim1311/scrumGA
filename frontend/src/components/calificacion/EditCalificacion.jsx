@@ -34,10 +34,10 @@ const EditCalificacion = () => {
     getCalificacionesById();
   }, []);
   return (
-    <div className="flex flex-col justify-center items-center h-screen w-screen">
+    <div className="flex flex-col justify-center items-center h-screen">
       <div className="mt-5 text-amber-50"></div>
-      <div className="flex flex-col items-center w-[70%]">
-      <div className="edit">
+      <div className="flex flex-col items-center">
+      <div className="edit w-auto">
       <h2 className="text-center font-bold text-2xl font-roboto mb-4">
           Editar Calificacion</h2>
         <form onSubmit={update} className="flex-col flex items-center form_edit">
