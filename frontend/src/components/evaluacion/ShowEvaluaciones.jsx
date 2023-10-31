@@ -15,22 +15,24 @@ const ShowEvaluaciones = () => {
         setEvaluaciones(response.data)
     }
 
-    const deleteEvaluaciones = async (id) => {
+    const deleteEvaluacion = async (id) => {
 
         await axios.delete(`${endpoint}/evaluacion/${id}`)
         getAllEvaluaciones()
+        
 
     }
     return (
-        <div>
-            <div className='d-grid gap-2'>
-                <Link to="/evaluacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white py-1 px-2 bg-green-400 rounded-lg'>Crear Evaluación</Link>
+        <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
+            <div className='flex justify-start w-5/6 p-4'>
+                <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
             </div>
-            <table className='table text-gray-400 border-separate space-y-6 text-sm w-[700px]'>
-                <thead className='bg-primary text-black'>
+            <table className='table table-striped'>
+                <thead className='bg-primary text-white'>
                     <tr>
                         <th>Descripción</th>
                         <th>Tipo</th>
+                        <th>Fecha</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,9 +40,10 @@ const ShowEvaluaciones = () => {
                         <tr key={evaluacion.id}>
                             <td>{evaluacion.descripcion}</td>
                             <td>{evaluacion.tipo_id}</td>
+                            <td>{evaluacion.fecha}</td>
                             <td>
-                                <Link to={`/evaluacionedit/${evaluaciones.id}`} className='btn btn-info m-2 ml-3 '>✏</Link>
-                                <button onClick={() => deleteEvaluaciones(evaluaciones.id)} className='btn btn-danger mr-3'>🗑</button>
+                                <Link to={`/evaluacionedit/${evaluacion.id}`} className='btn btn-info'>Edit</Link>
+                                <button onClick={() => deleteEvaluacion(evaluacion.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     ))}

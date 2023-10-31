@@ -2,9 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const endpoint = "http://localhost:8000/api/calificaciones";
+const endpoint = "http://localhost:8000/api/calificacion";
 
-const CreateCalificaciones = () => {
+const CreateCalificacion = () => {
     const [alumno_id, setAlumnoId] = useState("");
     const [evaluacion_id, setEvaluacionId] = useState("");
     const [nota, setNota] = useState("");
@@ -73,4 +73,4 @@ const CreateCalificaciones = () => {
     );
 };
 
-export default CreateCalificaciones;
+export default CreateCalificacion;

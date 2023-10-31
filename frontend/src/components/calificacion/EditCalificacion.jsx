@@ -1,13 +1,13 @@
-import axios from 'axios'
+import axios from 'axios';
 import { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/tipos/'
+const endpoint = 'http://localhost:8000/api/calificacion/'
 
-const EditTipos = () => {
+const EditCalificacion = () => {
 
     const [descripcion, setDescripcion] = useState('')
-    const [porcentaje, setPorsentaje] = useState('')
+    const [porcentaje, setPorcentaje] = useState('')
     const [rango, setRango] = useState('')
     const navigate = useNavigate()
     const { id } = useParams()
@@ -17,7 +17,7 @@ const EditTipos = () => {
         await axios.put(`${endpoint}${id}`, {
             descripcion: descripcion,
             porcentaje: porcentaje,
-            rango: rango,
+            rango: rango
         })
         navigate('/')
     }
@@ -27,7 +27,7 @@ const EditTipos = () => {
         const getTiposById = async () => {
             const response = await axios.get(`${endpoint}${id}`)
             setDescripcion(response.data.descripcion)
-            setPorsentaje(response.data.porcentaje)
+            setPorcentaje(response.data.porcentaje)
             setRango(response.data.rango)
         }
         getTiposById()
@@ -35,7 +35,7 @@ const EditTipos = () => {
     }, [])
     return (
         <div>
-            <h2>Editar Tipos</h2>
+            <h2>Editar Tipo</h2>
             <form onSubmit={update}>
                 <div className='mb-3'>
                     <label className='form-label'>Descripción</label>
@@ -51,7 +51,7 @@ const EditTipos = () => {
                     <label className='form-label'>Porcentaje</label>
                     <input
                         value={porcentaje}
-                        onChange={(e) => setPorsentaje(e.target.value)}
+                        onChange={(e) => setPorcentaje(e.target.value)}
                         type='text'
                         className='form-control'
                     />
@@ -72,4 +72,4 @@ const EditTipos = () => {
     )
 }
 
-export default EditTipos
+export default EditCalificacion

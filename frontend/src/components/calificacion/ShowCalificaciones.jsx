@@ -22,17 +22,15 @@ const ShowCalificaciones = () => {
 
     }
     return (
-        <div>
-            <div className='d-grid gap-2'>
-                <Link to="/calificacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white py-1 px-2 bg-green-400 rounded-lg'>Crear Calificación</Link>
+        <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
+      <div className='d-grid gap-2'>
+                <Link to="/calificacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
             </div>
-            <table className='table text-gray-400 border-separate space-y-6 text-sm w-[700px]'>
-                <thead className='bg-primary text-black'>
+            <table className='table table-striped'>
+                <thead className='bg-primary text-white'>
                     <tr>
-                        <th>Alumno</th>
-                        <th>Evaluación</th>
-                        <th>NOTA</th>
-                        <th>MENSAJE</th>
+                        <th>Alumno Id</th>
+                        <th>Evaluación Id</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,8 +41,8 @@ const ShowCalificaciones = () => {
                             <td>{calificacion.nota}</td>
                             <td>{calificacion.mensaje}</td>
                             <td>
-                                <Link to={`/calificacionedit/${calificacion.id}`} className='btn btn-info ml-3 mr-3'>✏</Link>
-                                <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger m-1'>🗑</button>
+                                <Link to={`/editcalificacion/${calificacion.id}`} className='btn btn-info'>Edit</Link>
+                                <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger'>Delete</button>
                             </td>
                         </tr>
                     ))}
