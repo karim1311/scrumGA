@@ -50,8 +50,7 @@ const EditAlumno = () => {
           la izquierda
         </p>
       </div>
-      <div className="edit">
-  
+      <div className="crud">
         <h2 className="text-center font-bold text-2xl font-roboto mb-4">
           Editando alumno
         </h2>
@@ -139,7 +138,7 @@ const EditAlumno = () => {
             />
           </div>
 
-          <div className="mb-3 block">
+          <div className="mb-3 ">
             <label className="form-label">
               <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                 Nombre
@@ -213,7 +212,7 @@ const EditAlumno = () => {
               />
             </div>
 
-            <button type="submit" className=" button">
+            <button type="submit" className="button">
               Actualizar
             </button>
           </div>

@@ -30,7 +30,8 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 10px;  
+
 }
 
 .button:hover {
@@ -106,6 +107,7 @@ tr td:nth-child(1),
 tr th:nth-child(1) {
   border-radius: 0.625rem 0 0 0.625rem;
 }
+
 
 /*estilos para una vista de 2X3*/ 
 
