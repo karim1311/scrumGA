@@ -30,7 +30,7 @@ function Home() {
   }
 
   return (
-    <div className='pt-20'>
+    <div className='pt-20 text-amber-50'>
       <h2 className='font-bold text-2xl'>Página de inicio</h2>
       <p className='pt-5'>Bienvenido a la página de inicio de mi aplicación.</p>
       
