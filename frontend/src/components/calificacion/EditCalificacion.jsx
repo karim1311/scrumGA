@@ -31,11 +31,13 @@ const EditCalificacion = () => {
     getTiposById();
   }, []);
   return (
-    
-      <div className="flex flex-col items-center h-screen">
-        <div className="flex text-amber-50 w-[40%]  flex-col justify-center items-center">
-          <div className="text-center font-bold text-2xl font-roboto m-4 w-[40%] edit">
-            <h2 className="text-center font-bold text-2xl font-roboto mb-4">
+    //<div className=" ">
+    <div className="flex flex-col justify-center items-center">
+    <div className="mt-5 text-amber-50">
+         
+            </div>
+            <div className="edit">
+                 <h2 className="text-center font-bold text-2xl font-roboto mb-4">
               Editar Tipo
             </h2>
             <form
@@ -91,9 +93,8 @@ const EditCalificacion = () => {
               </button>
             </form>
           </div>
-        </div>
-      </div>
-    
+       </div>
+     
   );
 };
 
