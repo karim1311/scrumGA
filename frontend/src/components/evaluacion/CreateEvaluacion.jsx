@@ -27,7 +27,7 @@ const CreateEvaluacion = () => {
                 </p>
             </div>
             <div className="edit mt-4">
-                <h2 className="text-center font-bold text-2xl font-roboto mb-4">
+                <h2 className="text-center font-bold text-2xl font-roboto m-4">
                     Registrar Evaluación
                 </h2>
                 <form onSubmit={store} className="flex-col flex items-center form_edit">
