@@ -65,4 +65,3 @@ const ShowCalificaciones = () => {
   );
 };
 
-export default ShowCalificaciones;
