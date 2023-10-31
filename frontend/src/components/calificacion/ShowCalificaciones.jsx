@@ -24,25 +24,32 @@ const ShowCalificaciones = () => {
     return (
         <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
       <div className='d-grid gap-2'>
-                <Link to="calificacioncreate" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+                <Link to="/calificacioncreate" className='button  btn-lg mt-2 mb-2'>Create</Link>
             </div>
-            <table className='table table-striped'>
-                <thead className='bg-primary text-white'>
-                    <tr>
-                        <th>Alumno Id</th>
-                        <th>Evaluación Id</th>
+            <table className="table table-striped border-separate space-y-6 text-sm">
+                <thead className="bg-[#434a5a] text-white">
+                    <tr className='trb'>
+                        <th className='p-3'>Alumno Id</th>
+                        <th className='p-3'>Evaluación Id</th>
+                        <th className='p-3'>Nota</th>
+                        <th className='p-3'>Mensaje</th>
+                        <th className='p-3'>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     {calificaciones.map((calificacion) => (
-                        <tr key={calificacion.id}>
-                            <td>{calificacion.alumno_id}</td>
-                            <td>{calificacion.evaluacion_id}</td>
-                            <td>{calificacion.nota}</td>
-                            <td>{calificacion.mensaje}</td>
+                        <tr className="bg-[#323846] lg:text-white text-center trb"   key={calificacion.id}>
+                            <td className='p-3'>{calificacion.alumno_id}</td>
+                            <td className='p-3'>{calificacion.evaluacion_id}</td>
+                            <td className='p-3'>{calificacion.nota}</td>
+                            <td className='p-3'>{calificacion.mensaje}</td>
                             <td>
-                                <Link to={`/editcalificacion/${calificacion.id}`} className='btn btn-info'>Edit</Link>
-                                <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger'>Delete</button>
+                                <Link to={`/calificacionedit/${calificacion.id}`} className='mr-3'>
+                                <i className="fa-solid fa-pencil text-green-700" />
+                                    </Link>
+                                <button onClick={() => deleteCalicacion(calificacion.id)} className='btn btn-danger'>
+                                <i className="fa-solid fa-trash-can text-red-700"/>
+                                    </button>
                             </td>
                         </tr>
                     ))}
