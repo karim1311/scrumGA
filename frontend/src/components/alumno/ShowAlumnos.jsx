@@ -20,8 +20,8 @@ const ShowAlumnos = () => {
   };
   return (
     <div className="bg-[#1f252e] h-screen flex-col flex justify-center items-center">
-      <div className="flex justify-start w-5/6 p-4">
-        <Link to="/alumnocreate" className="button  btn-lg mt-2 mb-2">
+      <div className="flex justify-start w-5/6 p-4 bg-fuchsia-600">
+        <Link to="/alumnocreate" className="button  btn-lg mt-2 mb-2 ">
           Create Alumno
         </Link>
       </div>
