@@ -1,88 +1,75 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import axios from 'axios';
+import { useState, useEffect } from 'react'
+import {useNavigate, useParams} from 'react-router-dom'
 
-const endpoint = "http://localhost:8000/api/calificacion/";
+const endpoint = 'http://localhost:8000/api/calificacion/'
 
 const EditCalificacion = () => {
-    const [alumno_id, setAlumnoId] = useState("");
-    const [evaluacion_id, setEvaluacionId] = useState("");
-    const [nota, setNota] = useState("");
-    const [mensaje, setMensaje] = useState("");
-    const navigate = useNavigate();
-    const { id } = useParams();
+
+    const [descripcion, setDescripcion] = useState('')
+    const [porcentaje, setPorcentaje] = useState('')
+    const [rango, setRango] = useState('')
+    const navigate = useNavigate()
+    const { id } = useParams()
 
     const update = async (e) => {
         e.preventDefault();
         await axios.put(`${endpoint}${id}`, {
-            alumno_id: alumno_id,
-            evaluacion_id: evaluacion_id,
-            nota: nota,
-            mensaje: mensaje,
-        });
-        navigate("/");
-    };
+            descripcion: descripcion,
+            porcentaje: porcentaje,
+            rango: rango
+        })
+        navigate('/')
+    }
 
     useEffect(() => {
-        const getCalificacionById = async () => {
-            const response = await axios.get(`${endpoint}${id}`);
-            setAlumnoId(response.data.alumno_id);
-            setEvaluacionId(response.data.evaluacion_id);
-            setNota(response.data.nota);
-            setMensaje(response.data.mensaje);
-        };
-        getCalificacionById();
-    }, []);
 
+        const getTiposById = async () => {
+            const response = await axios.get(`${endpoint}${id}`)
+            setDescripcion(response.data.descripcion)
+            setPorcentaje(response.data.porcentaje)
+            setRango(response.data.rango)
+        }
+        getTiposById()
+
+    }, [])
     return (
         <div>
-            <h2>Editar Calificación</h2>
+            <h2>Editar Tipo</h2>
             <form onSubmit={update}>
-                <div className="mb-3">
-                    <label className="form-label">Alumno_id</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Descripción</label>
                     <input
-                        value={alumno_id}
-                        onChange={(e) => setAlumnoId(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        value={descripcion}
+                        onChange={(e) => setDescripcion(e.target.value)}
+                        type='text'
+                        className='form-control'
                     />
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Evaluacion_id</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Porcentaje</label>
                     <input
-                        value={evaluacion_id}
-                        onChange={(e) => setEvaluacionId(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        value={porcentaje}
+                        onChange={(e) => setPorcentaje(e.target.value)}
+                        type='text'
+                        className='form-control'
                     />
                 </div>
 
-                <div className="mb-3">
-                    <label className="form-label">Nota</label>
+                <div className='mb-3'>
+                    <label className='form-label'>Rango</label>
                     <input
-                        value={nota}
-                        onChange={(e) => setNota(e.target.value)}
-                        type="text"
-                        className="form-control"
+                        value={rango}
+                        onChange={(e) => setRango(e.target.value)}
+                        type='text'
+                        className='form-control'
                     />
                 </div>
-
-                <div className="mb-3">
-                    <label className="form-label">Mensaje</label>
-                    <input
-                        value={mensaje}
-                        onChange={(e) => setMensaje(e.target.value)}
-                        type="text"
-                        className="form-control"
-                    />
-                </div>
-                <button type="submit" className="btn btn-success">
-                    Update
-                </button>
+                <button type='submit' className='btn btn-success'>Update</button>
             </form>
         </div>
-    );
-};
+    )
+}
 
-export default EditCalificacion;
+export default EditCalificacion
