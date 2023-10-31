@@ -34,6 +34,7 @@
 //     setBusqueda(valorBusqueda);
 //   };
 
+
 //   const handleEditAlumno = (event) => {
 //     <Link>
 //     </Link>
@@ -104,6 +105,7 @@
 //         </div>
 //       </div>
 //     </div>
+
 
 //   );
 // }
