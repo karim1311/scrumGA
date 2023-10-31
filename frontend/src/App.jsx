@@ -30,8 +30,8 @@ function App() {
   return (
 
     <Router>
-      <div className="flex w-[300px]">
-        <nav className="flex-1 bg-[#20232f] h-[720px] w-[300px] drop-shadow-xl" >
+      <div className="flex w-screen h-screen">
+        <nav className="flex-1 bg-[#323744] h-[screen] drop-shadow-xl" >
           <div className='text-[#04b2bf] text-2xl text-center pt-5'>
             <h2>Admin</h2>
             <p>[name Admin]</p>
@@ -93,7 +93,7 @@ function App() {
           </ul>
         </nav>
 
-        <div className="flex-2 flex flex-row justify-center items-baseline mt-20 w-screen bg-[#323744]">
+        <div className="flex-2 flex flex-row justify-center items-baseline mt-20 w-screen">
 
           <Routes>
             <Route path="/" element={<Home />} />

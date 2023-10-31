@@ -16,7 +16,7 @@ const CreateEvaluaciones = () => {
 
     }
     return (
-        <div>
+        <div className=''>
             <h2>Crear Evaluación</h2>
             <form onSubmit={store}>
                 <div className='mb-3'>
